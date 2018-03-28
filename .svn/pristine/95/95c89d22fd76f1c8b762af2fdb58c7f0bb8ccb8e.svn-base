@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{79291093-C895-48C4-88E1-91A67D876AE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProyectoControlReactivos</RootNamespace>
+    <AssemblyName>ProyectoControlReactivos</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Creyes\Desktop\PruebadeEjecucion\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3CD3411357A62EC3F35EBF6D2619B51F722E4433</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ProyectoControlReactivos_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.ConnectionInfoExtended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.Smo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.SmoExtended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlClrProvider, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.SqlClrProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SqlEnum, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unofficial.Microsoft.SQLServer.SMO.2014.12.0.2000.8\lib\Microsoft.SqlServer.SqlEnum.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetReactivos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReactivos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCatalogoClasificacionReactivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCatalogoClasificacionReactivo.Designer.cs">
+      <DependentUpon>frmAddCatalogoClasificacionReactivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCatalogoProfesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCatalogoProfesion.Designer.cs">
+      <DependentUpon>frmAddCatalogoProfesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCatalogoUnidadAlmacenamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCatalogoUnidadAlmacenamiento.Designer.cs">
+      <DependentUpon>frmAddCatalogoUnidadAlmacenamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddComponenteSolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddComponenteSolucion.Designer.cs">
+      <DependentUpon>frmAddComponenteSolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCorreoProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCorreoProfesor.Designer.cs">
+      <DependentUpon>frmAddCorreoProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddInventarioReactivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddInventarioReactivo.Designer.cs">
+      <DependentUpon>frmAddInventarioReactivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSolucionReactivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSolucionReactivo.Designer.cs">
+      <DependentUpon>frmAddSolucionReactivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddTelefonoProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddTelefonoProfesor.Designer.cs">
+      <DependentUpon>frmAddTelefonoProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCatalogoEstadoFisico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCatalogoEstadoFisico.Designer.cs">
+      <DependentUpon>frmAddCatalogoEstadoFisico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackupReactivosQuimicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackupReactivosQuimicos.Designer.cs">
+      <DependentUpon>frmBackupReactivosQuimicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddProfesor.Designer.cs">
+      <DependentUpon>frmAddProfesor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUsuario.Designer.cs">
+      <DependentUpon>frmAddUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMovimientoInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMovimientoInventario.Designer.cs">
+      <DependentUpon>frmMovimientoInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMovimientoInventarioSolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMovimientoInventarioSolucion.Designer.cs">
+      <DependentUpon>frmMovimientoInventarioSolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteDeUnMovimientoReactivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteDeUnMovimientoReactivo.Designer.cs">
+      <DependentUpon>frmReporteDeUnMovimientoReactivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteDeUnMovimientoSolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteDeUnMovimientoSolucion.Designer.cs">
+      <DependentUpon>frmReporteDeUnMovimientoSolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteMovimientoSolucionReactivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteMovimientoSolucionReactivo.Designer.cs">
+      <DependentUpon>frmReporteMovimientoSolucionReactivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteMovimientoInventarioReactivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteMovimientoInventarioReactivo.Designer.cs">
+      <DependentUpon>frmReporteMovimientoInventarioReactivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteDiario.Designer.cs">
+      <DependentUpon>ReporteDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteSolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteSolucion.Designer.cs">
+      <DependentUpon>frmReporteSolucion.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmAddCatalogoClasificacionReactivo.resx">
+      <DependentUpon>frmAddCatalogoClasificacionReactivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCatalogoProfesion.resx">
+      <DependentUpon>frmAddCatalogoProfesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCatalogoUnidadAlmacenamiento.resx">
+      <DependentUpon>frmAddCatalogoUnidadAlmacenamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddComponenteSolucion.resx">
+      <DependentUpon>frmAddComponenteSolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCorreoProfesor.resx">
+      <DependentUpon>frmAddCorreoProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddInventarioReactivo.resx">
+      <DependentUpon>frmAddInventarioReactivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSolucionReactivo.resx">
+      <DependentUpon>frmAddSolucionReactivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTelefonoProfesor.resx">
+      <DependentUpon>frmAddTelefonoProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCatalogoEstadoFisico.resx">
+      <DependentUpon>frmAddCatalogoEstadoFisico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackupReactivosQuimicos.resx">
+      <DependentUpon>frmBackupReactivosQuimicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddProfesor.resx">
+      <DependentUpon>frmAddProfesor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUsuario.resx">
+      <DependentUpon>frmAddUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMovimientoInventario.resx">
+      <DependentUpon>frmMovimientoInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMovimientoInventarioSolucion.resx">
+      <DependentUpon>frmMovimientoInventarioSolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteDeUnMovimientoReactivo.resx">
+      <DependentUpon>frmReporteDeUnMovimientoReactivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteDeUnMovimientoSolucion.resx">
+      <DependentUpon>frmReporteDeUnMovimientoSolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteMovimientoSolucionReactivo.resx">
+      <DependentUpon>frmReporteMovimientoSolucionReactivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteMovimientoInventarioReactivo.resx">
+      <DependentUpon>frmReporteMovimientoInventarioReactivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteSolucion.resx">
+      <DependentUpon>frmReporteSolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReportDeUnMovimientoInventario.rdlc" />
+    <EmbeddedResource Include="ReporteDiario.resx">
+      <DependentUpon>ReporteDiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportMovimientoDeUnMovimientoSolucion.rdlc" />
+    <EmbeddedResource Include="ReportMovimientoInventario.rdlc" />
+    <EmbeddedResource Include="ReportMovimientoInventarioReactivo.rdlc" />
+    <EmbeddedResource Include="ReportMovimientoInventarioSolucion.rdlc" />
+    <EmbeddedResource Include="ReportSolucionInventario.rdlc" />
+    <None Include="DataSetReactivos.xsc">
+      <DependentUpon>DataSetReactivos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetReactivos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReactivos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetReactivos.xss">
+      <DependentUpon>DataSetReactivos.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ControlReactivos.Model.MovimientoReactivo.datasource" />
+    <None Include="Properties\DataSources\ControlReactivos.Model.MovimientoSolucion.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ProyectoControlReactivos_TemporaryKey.pfx" />
+    <None Include="Manual\ManualUsuario.pdf" />
+    <None Include="Resources\nuevo-icono-de-grupo-de-usuario-14853.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\db_find16_h.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Appointment Notice Placeholder Man Picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign_up_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MetroUI-Apps-Live-Mail-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FirstWare-Icon-150x150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solidos-y-fluidos-300x195.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Masa_Vol.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\diamante.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Education_18-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\script_add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_brown16_h.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search16_h.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_paint.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_page.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlReactivos.AccesoADatos\ControlReactivos.AccesoADatos.csproj">
+      <Project>{ab5ba3ea-e113-4495-be71-53a69db1aea1}</Project>
+      <Name>ControlReactivos.AccesoADatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlReactivos.Model\ControlReactivos.Model.csproj">
+      <Project>{d4829d22-91ee-4778-a579-234f7dc4b11b}</Project>
+      <Name>ControlReactivos.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_redo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edittrash.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mdf_ndf_dbfiles.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

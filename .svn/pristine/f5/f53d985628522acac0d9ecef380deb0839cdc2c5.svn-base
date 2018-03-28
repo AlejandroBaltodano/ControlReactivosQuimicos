@@ -1,0 +1,105 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+using System.Windows.Forms;
+
+namespace ControlReactivos.AccesoADatos
+{
+    public class Conexion
+    {
+        SqlConnection connection;
+
+        public Conexion()
+        {
+
+            connection = new SqlConnection("Data Source=.;Initial Catalog=Inventario_Reactivos _Quimicos;User ID=sa;Password=123");
+           
+        }
+
+        public SqlConnection Conectar()
+        {
+            try
+            {
+                Desconectar();
+            }
+            catch { }
+
+            connection.Open();
+
+            return connection;
+        }
+
+        public void Desconectar()
+        {
+            connection.Close();
+        }
+
+        public SqlDataReader Query(String query)
+        {
+            Conectar();
+
+            SqlCommand comando = new SqlCommand(query, connection);
+
+            return comando.ExecuteReader();
+        }
+
+        public void Update(String query)
+        {
+            Conectar();
+
+            SqlCommand comando = new SqlCommand(query, connection);
+
+            comando.ExecuteNonQuery();
+
+            Desconectar();
+        }
+
+        public DataSet LlenarGrid(String query, DataGridView grid)
+        {
+            Conectar();
+
+            SqlCommand comando = new SqlCommand(query, connection);
+
+            comando.CommandTimeout = 0;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(comando);
+
+            DataSet ds = new DataSet();
+
+            adapter.Fill(ds);
+
+            grid.DataSource = ds.Tables[0];
+
+            Desconectar();
+
+            return ds;
+        }
+        public DataSet LlenarCombo(String query, ComboBox comboBox, string id, string descripcion,string nombreTabla )
+        {
+            Conectar();
+
+            SqlCommand comando = new SqlCommand(query, connection);
+
+            comando.CommandTimeout = 0;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(comando);
+
+            DataSet ds = new DataSet();
+
+            adapter.Fill(ds,nombreTabla);
+
+            comboBox.DataSource = ds.Tables[0].DefaultView;
+            comboBox.ValueMember = id;
+            comboBox.DisplayMember = descripcion;
+
+            Desconectar();
+
+            return ds;
+        }
+
+    }
+}

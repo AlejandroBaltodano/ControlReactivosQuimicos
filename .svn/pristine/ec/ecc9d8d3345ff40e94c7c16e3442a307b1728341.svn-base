@@ -1,0 +1,1290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetReactivos" targetNamespace="http://tempuri.org/DataSetReactivos.xsd" xmlns:mstns="http://tempuri.org/DataSetReactivos.xsd" xmlns="http://tempuri.org/DataSetReactivos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Inventario_Reactivos__QuimicosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Inventario_Reactivos__QuimicosConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProyectoControlReactivos.Properties.Settings.GlobalReference.Default.Inventario_Reactivos__QuimicosConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Movimiento_InventarioTableAdapter" GeneratorDataComponentClassName="Tabla_Movimiento_InventarioTableAdapter" Name="Tabla_Movimiento_Inventario" UserDataComponentName="Tabla_Movimiento_InventarioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Tabla_Movimiento_Inventario.IdMovimientoInventario, Tabla_Movimiento_Inventario.IdProfesorMovimiento, Tabla_Profesor.NombreProfesor, Tabla_Movimiento_Inventario.IdUsuarioMovimiento, 
+                         Tabla_Usuario.NombreUsuario, Tabla_Movimiento_Inventario.IdReactivoMovimiento, Tabla_Reactivo_Inventario.CodigoReactivo, Tabla_Movimiento_Inventario.IdCatMovimientoInventario, 
+                         Tabla_Catalogo_Movimiento_Inventario.NombreMovimiento, Tabla_Movimiento_Inventario.FechaTransaccion, Tabla_Movimiento_Inventario.ComentarioMovimientoInventario, 
+                         Tabla_Movimiento_Inventario.CantidadReactivoMovimiento, Tabla_Reactivo_Inventario.IdUnidadAlmacenamientoReactivo, Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.NombreUnidadAlmacenamiento, 
+                         Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.SiglaUnidadAlmacenamiento
+FROM            Tabla_Movimiento_Inventario INNER JOIN
+                         Tabla_Profesor ON Tabla_Movimiento_Inventario.IdProfesorMovimiento = Tabla_Profesor.IdProfesor INNER JOIN
+                         Tabla_Usuario ON Tabla_Movimiento_Inventario.IdUsuarioMovimiento = Tabla_Usuario.IdUsuario INNER JOIN
+                         Tabla_Reactivo_Inventario ON Tabla_Movimiento_Inventario.IdReactivoMovimiento = Tabla_Reactivo_Inventario.IdReactivoInventario INNER JOIN
+                         Tabla_Catalogo_Movimiento_Inventario ON Tabla_Movimiento_Inventario.IdCatMovimientoInventario = Tabla_Catalogo_Movimiento_Inventario.IdCatalogoMovimientoInventario INNER JOIN
+                         Tabla_Catalogo_Unidad_Almacenamiento_Reactivo ON 
+                         Tabla_Reactivo_Inventario.IdUnidadAlmacenamientoReactivo = Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.IdCatalogoUnidadAlmacenamientoReactivo
+WHERE        (Tabla_Movimiento_Inventario.IdCatEstado = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdProfesorMovimiento" DataSetColumn="IdProfesorMovimiento" />
+              <Mapping SourceColumn="IdUsuarioMovimiento" DataSetColumn="IdUsuarioMovimiento" />
+              <Mapping SourceColumn="IdReactivoMovimiento" DataSetColumn="IdReactivoMovimiento" />
+              <Mapping SourceColumn="IdCatMovimientoInventario" DataSetColumn="IdCatMovimientoInventario" />
+              <Mapping SourceColumn="FechaTransaccion" DataSetColumn="FechaTransaccion" />
+              <Mapping SourceColumn="ComentarioMovimientoInventario" DataSetColumn="ComentarioMovimientoInventario" />
+              <Mapping SourceColumn="CantidadReactivoMovimiento" DataSetColumn="CantidadReactivoMovimiento" />
+              <Mapping SourceColumn="NombreProfesor" DataSetColumn="NombreProfesor" />
+              <Mapping SourceColumn="NombreUsuario" DataSetColumn="NombreUsuario" />
+              <Mapping SourceColumn="NombreMovimiento" DataSetColumn="NombreMovimiento" />
+              <Mapping SourceColumn="IdUnidadAlmacenamientoReactivo" DataSetColumn="IdUnidadAlmacenamientoReactivo" />
+              <Mapping SourceColumn="NombreUnidadAlmacenamiento" DataSetColumn="NombreUnidadAlmacenamiento" />
+              <Mapping SourceColumn="SiglaUnidadAlmacenamiento" DataSetColumn="SiglaUnidadAlmacenamiento" />
+              <Mapping SourceColumn="IdMovimientoInventario" DataSetColumn="IdMovimientoInventario" />
+              <Mapping SourceColumn="CodigoReactivo" DataSetColumn="CodigoReactivo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Movimiento_Inventario_SolucionTableAdapter" GeneratorDataComponentClassName="Tabla_Movimiento_Inventario_SolucionTableAdapter" Name="Tabla_Movimiento_Inventario_Solucion" UserDataComponentName="Tabla_Movimiento_Inventario_SolucionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Tabla_Movimiento_Inventario_Solucion.IdMovimientoInventarioSolucion, Tabla_Movimiento_Inventario_Solucion.IdProfesorMovSolucion, Tabla_Profesor.NombreProfesor, 
+                         Tabla_Movimiento_Inventario_Solucion.IdUsuarioMovSolucion, Tabla_Usuario.NombreUsuario, Tabla_Movimiento_Inventario_Solucion.IdSolucionReactivoMovSolucion, 
+                         Tabla_Solucion_Reactivo.NombreSolucionReactivo, Tabla_Movimiento_Inventario_Solucion.IdCatMovimiento, Tabla_Catalogo_Movimiento_Inventario.NombreMovimiento, 
+                         Tabla_Movimiento_Inventario_Solucion.FechaTransaccion, Tabla_Movimiento_Inventario_Solucion.ComentarioMovSolucion, Tabla_Movimiento_Inventario_Solucion.CantidadMovSolucion, 
+                         Tabla_Solucion_Reactivo.IdUnidadAlmacenamientoSolucion, Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.NombreUnidadAlmacenamiento, 
+                         Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.SiglaUnidadAlmacenamiento
+FROM            Tabla_Movimiento_Inventario_Solucion INNER JOIN
+                         Tabla_Profesor ON Tabla_Movimiento_Inventario_Solucion.IdProfesorMovSolucion = Tabla_Profesor.IdProfesor INNER JOIN
+                         Tabla_Usuario ON Tabla_Movimiento_Inventario_Solucion.IdUsuarioMovSolucion = Tabla_Usuario.IdUsuario INNER JOIN
+                         Tabla_Solucion_Reactivo ON Tabla_Movimiento_Inventario_Solucion.IdSolucionReactivoMovSolucion = Tabla_Solucion_Reactivo.IdSolucionReactivo INNER JOIN
+                         Tabla_Catalogo_Movimiento_Inventario ON Tabla_Movimiento_Inventario_Solucion.IdCatMovimiento = Tabla_Catalogo_Movimiento_Inventario.IdCatalogoMovimientoInventario INNER JOIN
+                         Tabla_Catalogo_Unidad_Almacenamiento_Reactivo ON 
+                         Tabla_Solucion_Reactivo.IdUnidadAlmacenamientoSolucion = Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.IdCatalogoUnidadAlmacenamientoReactivo
+WHERE        (Tabla_Movimiento_Inventario_Solucion.IdCatEstado = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdMovimientoInventarioSolucion" DataSetColumn="IdMovimientoInventarioSolucion" />
+              <Mapping SourceColumn="IdProfesorMovSolucion" DataSetColumn="IdProfesorMovSolucion" />
+              <Mapping SourceColumn="IdUsuarioMovSolucion" DataSetColumn="IdUsuarioMovSolucion" />
+              <Mapping SourceColumn="IdSolucionReactivoMovSolucion" DataSetColumn="IdSolucionReactivoMovSolucion" />
+              <Mapping SourceColumn="IdCatMovimiento" DataSetColumn="IdCatMovimiento" />
+              <Mapping SourceColumn="FechaTransaccion" DataSetColumn="FechaTransaccion" />
+              <Mapping SourceColumn="ComentarioMovSolucion" DataSetColumn="ComentarioMovSolucion" />
+              <Mapping SourceColumn="CantidadMovSolucion" DataSetColumn="CantidadMovSolucion" />
+              <Mapping SourceColumn="NombreProfesor" DataSetColumn="NombreProfesor" />
+              <Mapping SourceColumn="NombreUsuario" DataSetColumn="NombreUsuario" />
+              <Mapping SourceColumn="NombreSolucionReactivo" DataSetColumn="NombreSolucionReactivo" />
+              <Mapping SourceColumn="NombreMovimiento" DataSetColumn="NombreMovimiento" />
+              <Mapping SourceColumn="IdUnidadAlmacenamientoSolucion" DataSetColumn="IdUnidadAlmacenamientoSolucion" />
+              <Mapping SourceColumn="NombreUnidadAlmacenamiento" DataSetColumn="NombreUnidadAlmacenamiento" />
+              <Mapping SourceColumn="SiglaUnidadAlmacenamiento" DataSetColumn="SiglaUnidadAlmacenamiento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_UsuarioTableAdapter" GeneratorDataComponentClassName="Tabla_UsuarioTableAdapter" Name="Tabla_Usuario" UserDataComponentName="Tabla_UsuarioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Usuario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Usuario] WHERE (([IdUsuario] = @Original_IdUsuario) AND ([Cedula] = @Original_Cedula) AND ([IdCatalogoEstado] = @Original_IdCatalogoEstado))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Cedula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Cedula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Usuario] ([Cedula], [NombreUsuarioSql], [ContraseñaUsuarioSql], [NombreUsuario], [Apellido1], [Apellido2], [IdCatalogoEstado]) VALUES (@Cedula, @NombreUsuarioSql, @ContraseñaUsuarioSql, @NombreUsuario, @Apellido1, @Apellido2, @IdCatalogoEstado);
+SELECT IdUsuario, Cedula, NombreUsuarioSql, ContraseñaUsuarioSql, NombreUsuario, Apellido1, Apellido2, IdCatalogoEstado FROM Tabla_Usuario WHERE (IdUsuario = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Cedula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Cedula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreUsuarioSql" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreUsuarioSql" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ContraseñaUsuarioSql" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ContraseñaUsuarioSql" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreUsuario" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Apellido1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Apellido1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Apellido2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Apellido2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdUsuario, Cedula, NombreUsuarioSql, ContraseñaUsuarioSql, NombreUsuario, Apellido1, Apellido2, IdCatalogoEstado FROM dbo.Tabla_Usuario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Usuario] SET [Cedula] = @Cedula, [NombreUsuarioSql] = @NombreUsuarioSql, [ContraseñaUsuarioSql] = @ContraseñaUsuarioSql, [NombreUsuario] = @NombreUsuario, [Apellido1] = @Apellido1, [Apellido2] = @Apellido2, [IdCatalogoEstado] = @IdCatalogoEstado WHERE (([IdUsuario] = @Original_IdUsuario) AND ([Cedula] = @Original_Cedula) AND ([IdCatalogoEstado] = @Original_IdCatalogoEstado));
+SELECT IdUsuario, Cedula, NombreUsuarioSql, ContraseñaUsuarioSql, NombreUsuario, Apellido1, Apellido2, IdCatalogoEstado FROM Tabla_Usuario WHERE (IdUsuario = @IdUsuario)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Cedula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Cedula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreUsuarioSql" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreUsuarioSql" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ContraseñaUsuarioSql" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ContraseñaUsuarioSql" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreUsuario" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Apellido1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Apellido1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Apellido2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Apellido2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Cedula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Cedula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdUsuario" ColumnName="IdUsuario" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdUsuario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdUsuario" DataSetColumn="IdUsuario" />
+              <Mapping SourceColumn="Cedula" DataSetColumn="Cedula" />
+              <Mapping SourceColumn="NombreUsuarioSql" DataSetColumn="NombreUsuarioSql" />
+              <Mapping SourceColumn="ContraseñaUsuarioSql" DataSetColumn="ContraseñaUsuarioSql" />
+              <Mapping SourceColumn="NombreUsuario" DataSetColumn="NombreUsuario" />
+              <Mapping SourceColumn="Apellido1" DataSetColumn="Apellido1" />
+              <Mapping SourceColumn="Apellido2" DataSetColumn="Apellido2" />
+              <Mapping SourceColumn="IdCatalogoEstado" DataSetColumn="IdCatalogoEstado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_ProfesorTableAdapter" GeneratorDataComponentClassName="Tabla_ProfesorTableAdapter" Name="Tabla_Profesor" UserDataComponentName="Tabla_ProfesorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Profesor" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Profesor] WHERE (([IdProfesor] = @Original_IdProfesor) AND ([Cedula] = @Original_Cedula) AND ([IdCatalogoProfesionProfe] = @Original_IdCatalogoProfesionProfe) AND ([IdCatalogoEstado] = @Original_IdCatalogoEstado) AND ([IdUsuario] = @Original_IdUsuario))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProfesor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProfesor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Cedula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Cedula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoProfesionProfe" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoProfesionProfe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Profesor] ([Cedula], [NombreProfesor], [Apellido1], [Apellido2], [IdCatalogoProfesionProfe], [IdCatalogoEstado], [IdUsuario]) VALUES (@Cedula, @NombreProfesor, @Apellido1, @Apellido2, @IdCatalogoProfesionProfe, @IdCatalogoEstado, @IdUsuario);
+SELECT IdProfesor, Cedula, NombreProfesor, Apellido1, Apellido2, IdCatalogoProfesionProfe, IdCatalogoEstado, IdUsuario FROM Tabla_Profesor WHERE (IdProfesor = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Cedula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Cedula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreProfesor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreProfesor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Apellido1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Apellido1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Apellido2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Apellido2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoProfesionProfe" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoProfesionProfe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdProfesor, Cedula, NombreProfesor, Apellido1, Apellido2, IdCatalogoProfesionProfe, IdCatalogoEstado, IdUsuario FROM dbo.Tabla_Profesor</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Profesor] SET [Cedula] = @Cedula, [NombreProfesor] = @NombreProfesor, [Apellido1] = @Apellido1, [Apellido2] = @Apellido2, [IdCatalogoProfesionProfe] = @IdCatalogoProfesionProfe, [IdCatalogoEstado] = @IdCatalogoEstado, [IdUsuario] = @IdUsuario WHERE (([IdProfesor] = @Original_IdProfesor) AND ([Cedula] = @Original_Cedula) AND ([IdCatalogoProfesionProfe] = @Original_IdCatalogoProfesionProfe) AND ([IdCatalogoEstado] = @Original_IdCatalogoEstado) AND ([IdUsuario] = @Original_IdUsuario));
+SELECT IdProfesor, Cedula, NombreProfesor, Apellido1, Apellido2, IdCatalogoProfesionProfe, IdCatalogoEstado, IdUsuario FROM Tabla_Profesor WHERE (IdProfesor = @IdProfesor)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Cedula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Cedula" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreProfesor" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreProfesor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Apellido1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Apellido1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Apellido2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Apellido2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoProfesionProfe" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoProfesionProfe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProfesor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProfesor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Cedula" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Cedula" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoProfesionProfe" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoProfesionProfe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdProfesor" ColumnName="IdProfesor" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdProfesor" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdProfesor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdProfesor" DataSetColumn="IdProfesor" />
+              <Mapping SourceColumn="Cedula" DataSetColumn="Cedula" />
+              <Mapping SourceColumn="NombreProfesor" DataSetColumn="NombreProfesor" />
+              <Mapping SourceColumn="Apellido1" DataSetColumn="Apellido1" />
+              <Mapping SourceColumn="Apellido2" DataSetColumn="Apellido2" />
+              <Mapping SourceColumn="IdCatalogoProfesionProfe" DataSetColumn="IdCatalogoProfesionProfe" />
+              <Mapping SourceColumn="IdCatalogoEstado" DataSetColumn="IdCatalogoEstado" />
+              <Mapping SourceColumn="IdUsuario" DataSetColumn="IdUsuario" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Reactivo_InventarioTableAdapter" GeneratorDataComponentClassName="Tabla_Reactivo_InventarioTableAdapter" Name="Tabla_Reactivo_Inventario" UserDataComponentName="Tabla_Reactivo_InventarioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Tabla_Reactivo_Inventario.IdReactivoInventario, Tabla_Reactivo_Inventario.CodigoReactivo, Tabla_Reactivo_Inventario.NombreReactivo, Tabla_Reactivo_Inventario.NombreAlternativo, 
+                         Tabla_Reactivo_Inventario.FormulaReactivo, Tabla_Reactivo_Inventario.CantidadExistencia, Tabla_Catalogo_Clasificacion_Reactivo.NombreClasificacion, 
+                         Tabla_Catalogo_Estado_Fisico_Reactivo.NombreEstadoFisico, Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.NombreUnidadAlmacenamiento, 
+                         Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.SiglaUnidadAlmacenamiento, Tabla_Reactivo_Inventario.UbicacionReactivo, Tabla_Reactivo_Inventario.ComentarioReactivo, 
+                         Tabla_Reactivo_Inventario.IdUsuario
+FROM            Tabla_Reactivo_Inventario INNER JOIN
+                         Tabla_Catalogo_Clasificacion_Reactivo ON Tabla_Reactivo_Inventario.IdCatalogoClasificacionReactivo = Tabla_Catalogo_Clasificacion_Reactivo.IdCatalogoClasificacionReactivos INNER JOIN
+                         Tabla_Catalogo_Estado_Fisico_Reactivo ON Tabla_Reactivo_Inventario.IdCatalogoEstadoFisicoReactivo = Tabla_Catalogo_Estado_Fisico_Reactivo.IdCatalogoEstadoFisicoReactivo INNER JOIN
+                         Tabla_Catalogo_Unidad_Almacenamiento_Reactivo ON 
+                         Tabla_Reactivo_Inventario.IdUnidadAlmacenamientoReactivo = Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.IdCatalogoUnidadAlmacenamientoReactivo
+WHERE        (Tabla_Reactivo_Inventario.IdCatalogoEstadoReactivo = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdReactivoInventario" DataSetColumn="IdReactivoInventario" />
+              <Mapping SourceColumn="CodigoReactivo" DataSetColumn="CodigoReactivo" />
+              <Mapping SourceColumn="NombreReactivo" DataSetColumn="NombreReactivo" />
+              <Mapping SourceColumn="NombreAlternativo" DataSetColumn="NombreAlternativo" />
+              <Mapping SourceColumn="FormulaReactivo" DataSetColumn="FormulaReactivo" />
+              <Mapping SourceColumn="CantidadExistencia" DataSetColumn="CantidadExistencia" />
+              <Mapping SourceColumn="UbicacionReactivo" DataSetColumn="UbicacionReactivo" />
+              <Mapping SourceColumn="ComentarioReactivo" DataSetColumn="ComentarioReactivo" />
+              <Mapping SourceColumn="IdUsuario" DataSetColumn="IdUsuario" />
+              <Mapping SourceColumn="NombreClasificacion" DataSetColumn="NombreClasificacion" />
+              <Mapping SourceColumn="NombreEstadoFisico" DataSetColumn="NombreEstadoFisico" />
+              <Mapping SourceColumn="NombreUnidadAlmacenamiento" DataSetColumn="NombreUnidadAlmacenamiento" />
+              <Mapping SourceColumn="SiglaUnidadAlmacenamiento" DataSetColumn="SiglaUnidadAlmacenamiento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Solucion_ReactivoTableAdapter" GeneratorDataComponentClassName="Tabla_Solucion_ReactivoTableAdapter" Name="Tabla_Solucion_Reactivo" UserDataComponentName="Tabla_Solucion_ReactivoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Tabla_Solucion_Reactivo.IdSolucionReactivo, Tabla_Solucion_Reactivo.NombreSolucionReactivo, Tabla_Solucion_Reactivo.FormulaSolucion, Tabla_Solucion_Reactivo.CantidadExistencia, 
+                         Tabla_Catalogo_Clasificacion_Reactivo.NombreClasificacion, Tabla_Catalogo_Estado_Fisico_Reactivo.NombreEstadoFisico, Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.NombreUnidadAlmacenamiento, 
+                         Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.SiglaUnidadAlmacenamiento, Tabla_Solucion_Reactivo.UbicacionSolucion, Tabla_Solucion_Reactivo.ComentarioSolucion, 
+                         Tabla_Usuario.NombreUsuario
+FROM            Tabla_Solucion_Reactivo INNER JOIN
+                         Tabla_Catalogo_Clasificacion_Reactivo ON Tabla_Solucion_Reactivo.IdClasificacionSolucion = Tabla_Catalogo_Clasificacion_Reactivo.IdCatalogoClasificacionReactivos INNER JOIN
+                         Tabla_Catalogo_Estado_Fisico_Reactivo ON Tabla_Solucion_Reactivo.IdEstadoFisicoSolucion = Tabla_Catalogo_Estado_Fisico_Reactivo.IdCatalogoEstadoFisicoReactivo INNER JOIN
+                         Tabla_Catalogo_Unidad_Almacenamiento_Reactivo ON 
+                         Tabla_Solucion_Reactivo.IdUnidadAlmacenamientoSolucion = Tabla_Catalogo_Unidad_Almacenamiento_Reactivo.IdCatalogoUnidadAlmacenamientoReactivo INNER JOIN
+                         Tabla_Usuario ON Tabla_Solucion_Reactivo.IdUsuarioSolucion = Tabla_Usuario.IdUsuario
+WHERE        (Tabla_Solucion_Reactivo.IdCatalogoEstadoSolucion = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdSolucionReactivo" DataSetColumn="IdSolucionReactivo" />
+              <Mapping SourceColumn="NombreSolucionReactivo" DataSetColumn="NombreSolucionReactivo" />
+              <Mapping SourceColumn="CantidadExistencia" DataSetColumn="CantidadExistencia" />
+              <Mapping SourceColumn="ComentarioSolucion" DataSetColumn="ComentarioSolucion" />
+              <Mapping SourceColumn="UbicacionSolucion" DataSetColumn="UbicacionSolucion" />
+              <Mapping SourceColumn="FormulaSolucion" DataSetColumn="FormulaSolucion" />
+              <Mapping SourceColumn="NombreClasificacion" DataSetColumn="NombreClasificacion" />
+              <Mapping SourceColumn="NombreEstadoFisico" DataSetColumn="NombreEstadoFisico" />
+              <Mapping SourceColumn="NombreUnidadAlmacenamiento" DataSetColumn="NombreUnidadAlmacenamiento" />
+              <Mapping SourceColumn="SiglaUnidadAlmacenamiento" DataSetColumn="SiglaUnidadAlmacenamiento" />
+              <Mapping SourceColumn="NombreUsuario" DataSetColumn="NombreUsuario" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoTableAdapter" GeneratorDataComponentClassName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoTableAdapter" Name="Tabla_Catalogo_Unidad_Almacenamiento_Reactivo" UserDataComponentName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Catalogo_Unidad_Almacenamiento_Reactivo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Catalogo_Unidad_Almacenamiento_Reactivo] WHERE (([IdCatalogoUnidadAlmacenamientoReactivo] = @Original_IdCatalogoUnidadAlmacenamientoReactivo))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoUnidadAlmacenamientoReactivo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoUnidadAlmacenamientoReactivo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Catalogo_Unidad_Almacenamiento_Reactivo] ([NombreUnidadAlmacenamiento], [SiglaUnidadAlmacenamiento]) VALUES (@NombreUnidadAlmacenamiento, @SiglaUnidadAlmacenamiento);
+SELECT IdCatalogoUnidadAlmacenamientoReactivo, NombreUnidadAlmacenamiento, SiglaUnidadAlmacenamiento FROM Tabla_Catalogo_Unidad_Almacenamiento_Reactivo WHERE (IdCatalogoUnidadAlmacenamientoReactivo = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreUnidadAlmacenamiento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreUnidadAlmacenamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SiglaUnidadAlmacenamiento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SiglaUnidadAlmacenamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdCatalogoUnidadAlmacenamientoReactivo, NombreUnidadAlmacenamiento, SiglaUnidadAlmacenamiento FROM dbo.Tabla_Catalogo_Unidad_Almacenamiento_Reactivo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Catalogo_Unidad_Almacenamiento_Reactivo] SET [NombreUnidadAlmacenamiento] = @NombreUnidadAlmacenamiento, [SiglaUnidadAlmacenamiento] = @SiglaUnidadAlmacenamiento WHERE (([IdCatalogoUnidadAlmacenamientoReactivo] = @Original_IdCatalogoUnidadAlmacenamientoReactivo));
+SELECT IdCatalogoUnidadAlmacenamientoReactivo, NombreUnidadAlmacenamiento, SiglaUnidadAlmacenamiento FROM Tabla_Catalogo_Unidad_Almacenamiento_Reactivo WHERE (IdCatalogoUnidadAlmacenamientoReactivo = @IdCatalogoUnidadAlmacenamientoReactivo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreUnidadAlmacenamiento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreUnidadAlmacenamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SiglaUnidadAlmacenamiento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SiglaUnidadAlmacenamiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoUnidadAlmacenamientoReactivo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoUnidadAlmacenamientoReactivo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCatalogoUnidadAlmacenamientoReactivo" ColumnName="IdCatalogoUnidadAlmacenamientoReactivo" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoUnidadAlmacenamientoReactivo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCatalogoUnidadAlmacenamientoReactivo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdCatalogoUnidadAlmacenamientoReactivo" DataSetColumn="IdCatalogoUnidadAlmacenamientoReactivo" />
+              <Mapping SourceColumn="NombreUnidadAlmacenamiento" DataSetColumn="NombreUnidadAlmacenamiento" />
+              <Mapping SourceColumn="SiglaUnidadAlmacenamiento" DataSetColumn="SiglaUnidadAlmacenamiento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Catalogo_Movimiento_InventarioTableAdapter" GeneratorDataComponentClassName="Tabla_Catalogo_Movimiento_InventarioTableAdapter" Name="Tabla_Catalogo_Movimiento_Inventario" UserDataComponentName="Tabla_Catalogo_Movimiento_InventarioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Catalogo_Movimiento_Inventario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Catalogo_Movimiento_Inventario] WHERE (([IdCatalogoMovimientoInventario] = @Original_IdCatalogoMovimientoInventario))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoMovimientoInventario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoMovimientoInventario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Catalogo_Movimiento_Inventario] ([NombreMovimiento]) VALUES (@NombreMovimiento);
+SELECT IdCatalogoMovimientoInventario, NombreMovimiento FROM Tabla_Catalogo_Movimiento_Inventario WHERE (IdCatalogoMovimientoInventario = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreMovimiento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreMovimiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdCatalogoMovimientoInventario, NombreMovimiento FROM dbo.Tabla_Catalogo_Movimiento_Inventario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Catalogo_Movimiento_Inventario] SET [NombreMovimiento] = @NombreMovimiento WHERE (([IdCatalogoMovimientoInventario] = @Original_IdCatalogoMovimientoInventario));
+SELECT IdCatalogoMovimientoInventario, NombreMovimiento FROM Tabla_Catalogo_Movimiento_Inventario WHERE (IdCatalogoMovimientoInventario = @IdCatalogoMovimientoInventario)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreMovimiento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreMovimiento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoMovimientoInventario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoMovimientoInventario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCatalogoMovimientoInventario" ColumnName="IdCatalogoMovimientoInventario" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoMovimientoInventario" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCatalogoMovimientoInventario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdCatalogoMovimientoInventario" DataSetColumn="IdCatalogoMovimientoInventario" />
+              <Mapping SourceColumn="NombreMovimiento" DataSetColumn="NombreMovimiento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Catalogo_Estado_Fisico_ReactivoTableAdapter" GeneratorDataComponentClassName="Tabla_Catalogo_Estado_Fisico_ReactivoTableAdapter" Name="Tabla_Catalogo_Estado_Fisico_Reactivo" UserDataComponentName="Tabla_Catalogo_Estado_Fisico_ReactivoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Catalogo_Estado_Fisico_Reactivo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Catalogo_Estado_Fisico_Reactivo] WHERE (([IdCatalogoEstadoFisicoReactivo] = @Original_IdCatalogoEstadoFisicoReactivo))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoEstadoFisicoReactivo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstadoFisicoReactivo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Catalogo_Estado_Fisico_Reactivo] ([NombreEstadoFisico]) VALUES (@NombreEstadoFisico);
+SELECT IdCatalogoEstadoFisicoReactivo, NombreEstadoFisico FROM Tabla_Catalogo_Estado_Fisico_Reactivo WHERE (IdCatalogoEstadoFisicoReactivo = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreEstadoFisico" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreEstadoFisico" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdCatalogoEstadoFisicoReactivo, NombreEstadoFisico FROM dbo.Tabla_Catalogo_Estado_Fisico_Reactivo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Catalogo_Estado_Fisico_Reactivo] SET [NombreEstadoFisico] = @NombreEstadoFisico WHERE (([IdCatalogoEstadoFisicoReactivo] = @Original_IdCatalogoEstadoFisicoReactivo));
+SELECT IdCatalogoEstadoFisicoReactivo, NombreEstadoFisico FROM Tabla_Catalogo_Estado_Fisico_Reactivo WHERE (IdCatalogoEstadoFisicoReactivo = @IdCatalogoEstadoFisicoReactivo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreEstadoFisico" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreEstadoFisico" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoEstadoFisicoReactivo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstadoFisicoReactivo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCatalogoEstadoFisicoReactivo" ColumnName="IdCatalogoEstadoFisicoReactivo" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoEstadoFisicoReactivo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCatalogoEstadoFisicoReactivo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdCatalogoEstadoFisicoReactivo" DataSetColumn="IdCatalogoEstadoFisicoReactivo" />
+              <Mapping SourceColumn="NombreEstadoFisico" DataSetColumn="NombreEstadoFisico" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Catalogo_EstadoTableAdapter" GeneratorDataComponentClassName="Tabla_Catalogo_EstadoTableAdapter" Name="Tabla_Catalogo_Estado" UserDataComponentName="Tabla_Catalogo_EstadoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Catalogo_Estado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Catalogo_Estado] WHERE (([IdCatalogoEstado] = @Original_IdCatalogoEstado))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Catalogo_Estado] ([NombreEstado]) VALUES (@NombreEstado);
+SELECT IdCatalogoEstado, NombreEstado FROM Tabla_Catalogo_Estado WHERE (IdCatalogoEstado = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreEstado" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdCatalogoEstado, NombreEstado FROM dbo.Tabla_Catalogo_Estado</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Catalogo_Estado] SET [NombreEstado] = @NombreEstado WHERE (([IdCatalogoEstado] = @Original_IdCatalogoEstado));
+SELECT IdCatalogoEstado, NombreEstado FROM Tabla_Catalogo_Estado WHERE (IdCatalogoEstado = @IdCatalogoEstado)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreEstado" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCatalogoEstado" ColumnName="IdCatalogoEstado" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoEstado" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCatalogoEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdCatalogoEstado" DataSetColumn="IdCatalogoEstado" />
+              <Mapping SourceColumn="NombreEstado" DataSetColumn="NombreEstado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Catalogo_Clasificacion_ReactivoTableAdapter" GeneratorDataComponentClassName="Tabla_Catalogo_Clasificacion_ReactivoTableAdapter" Name="Tabla_Catalogo_Clasificacion_Reactivo" UserDataComponentName="Tabla_Catalogo_Clasificacion_ReactivoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Catalogo_Clasificacion_Reactivo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Catalogo_Clasificacion_Reactivo] WHERE (([IdCatalogoClasificacionReactivos] = @Original_IdCatalogoClasificacionReactivos))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoClasificacionReactivos" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoClasificacionReactivos" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Catalogo_Clasificacion_Reactivo] ([NombreClasificacion]) VALUES (@NombreClasificacion);
+SELECT IdCatalogoClasificacionReactivos, NombreClasificacion FROM Tabla_Catalogo_Clasificacion_Reactivo WHERE (IdCatalogoClasificacionReactivos = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreClasificacion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreClasificacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdCatalogoClasificacionReactivos, NombreClasificacion FROM dbo.Tabla_Catalogo_Clasificacion_Reactivo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Catalogo_Clasificacion_Reactivo] SET [NombreClasificacion] = @NombreClasificacion WHERE (([IdCatalogoClasificacionReactivos] = @Original_IdCatalogoClasificacionReactivos));
+SELECT IdCatalogoClasificacionReactivos, NombreClasificacion FROM Tabla_Catalogo_Clasificacion_Reactivo WHERE (IdCatalogoClasificacionReactivos = @IdCatalogoClasificacionReactivos)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NombreClasificacion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NombreClasificacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCatalogoClasificacionReactivos" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCatalogoClasificacionReactivos" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCatalogoClasificacionReactivos" ColumnName="IdCatalogoClasificacionReactivos" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCatalogoClasificacionReactivos" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCatalogoClasificacionReactivos" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdCatalogoClasificacionReactivos" DataSetColumn="IdCatalogoClasificacionReactivos" />
+              <Mapping SourceColumn="NombreClasificacion" DataSetColumn="NombreClasificacion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Bitacora_Inventario_ReactivosTableAdapter" GeneratorDataComponentClassName="Tabla_Bitacora_Inventario_ReactivosTableAdapter" Name="Tabla_Bitacora_Inventario_Reactivos" UserDataComponentName="Tabla_Bitacora_Inventario_ReactivosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Bitacora_Inventario_Reactivos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Bitacora_Inventario_Reactivos] WHERE (([IdBitacoraInventarioReactivos] = @Original_IdBitacoraInventarioReactivos) AND ([IdUsuarioLogin] = @Original_IdUsuarioLogin) AND ([IdReactivoInventario] = @Original_IdReactivoInventario) AND ([FechaTransaccion] = @Original_FechaTransaccion))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdBitacoraInventarioReactivos" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdBitacoraInventarioReactivos" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdReactivoInventario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdReactivoInventario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Bitacora_Inventario_Reactivos] ([IdUsuarioLogin], [IdReactivoInventario], [FechaTransaccion], [TipoTransaccion]) VALUES (@IdUsuarioLogin, @IdReactivoInventario, @FechaTransaccion, @TipoTransaccion);
+SELECT IdBitacoraInventarioReactivos, IdUsuarioLogin, IdReactivoInventario, FechaTransaccion, TipoTransaccion FROM Tabla_Bitacora_Inventario_Reactivos WHERE (IdBitacoraInventarioReactivos = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdReactivoInventario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdReactivoInventario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoTransaccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdBitacoraInventarioReactivos, IdUsuarioLogin, IdReactivoInventario, FechaTransaccion, TipoTransaccion FROM dbo.Tabla_Bitacora_Inventario_Reactivos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Bitacora_Inventario_Reactivos] SET [IdUsuarioLogin] = @IdUsuarioLogin, [IdReactivoInventario] = @IdReactivoInventario, [FechaTransaccion] = @FechaTransaccion, [TipoTransaccion] = @TipoTransaccion WHERE (([IdBitacoraInventarioReactivos] = @Original_IdBitacoraInventarioReactivos) AND ([IdUsuarioLogin] = @Original_IdUsuarioLogin) AND ([IdReactivoInventario] = @Original_IdReactivoInventario) AND ([FechaTransaccion] = @Original_FechaTransaccion));
+SELECT IdBitacoraInventarioReactivos, IdUsuarioLogin, IdReactivoInventario, FechaTransaccion, TipoTransaccion FROM Tabla_Bitacora_Inventario_Reactivos WHERE (IdBitacoraInventarioReactivos = @IdBitacoraInventarioReactivos)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdReactivoInventario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdReactivoInventario" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoTransaccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdBitacoraInventarioReactivos" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdBitacoraInventarioReactivos" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdReactivoInventario" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdReactivoInventario" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdBitacoraInventarioReactivos" ColumnName="IdBitacoraInventarioReactivos" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdBitacoraInventarioReactivos" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdBitacoraInventarioReactivos" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdBitacoraInventarioReactivos" DataSetColumn="IdBitacoraInventarioReactivos" />
+              <Mapping SourceColumn="IdUsuarioLogin" DataSetColumn="IdUsuarioLogin" />
+              <Mapping SourceColumn="IdReactivoInventario" DataSetColumn="IdReactivoInventario" />
+              <Mapping SourceColumn="FechaTransaccion" DataSetColumn="FechaTransaccion" />
+              <Mapping SourceColumn="TipoTransaccion" DataSetColumn="TipoTransaccion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Bitacora_Inventario_SolucionesTableAdapter" GeneratorDataComponentClassName="Tabla_Bitacora_Inventario_SolucionesTableAdapter" Name="Tabla_Bitacora_Inventario_Soluciones" UserDataComponentName="Tabla_Bitacora_Inventario_SolucionesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Bitacora_Inventario_Soluciones" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Bitacora_Inventario_Soluciones] WHERE (([IdBitacoraInventarioSoluciones] = @Original_IdBitacoraInventarioSoluciones) AND ([IdUsuarioLogin] = @Original_IdUsuarioLogin) AND ([IdSolucion] = @Original_IdSolucion) AND ([FechaTransaccion] = @Original_FechaTransaccion))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdBitacoraInventarioSoluciones" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdBitacoraInventarioSoluciones" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdSolucion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSolucion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Bitacora_Inventario_Soluciones] ([IdUsuarioLogin], [IdSolucion], [FechaTransaccion], [TipoTransaccion]) VALUES (@IdUsuarioLogin, @IdSolucion, @FechaTransaccion, @TipoTransaccion);
+SELECT IdBitacoraInventarioSoluciones, IdUsuarioLogin, IdSolucion, FechaTransaccion, TipoTransaccion FROM Tabla_Bitacora_Inventario_Soluciones WHERE (IdBitacoraInventarioSoluciones = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdSolucion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSolucion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoTransaccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdBitacoraInventarioSoluciones, IdUsuarioLogin, IdSolucion, FechaTransaccion, TipoTransaccion FROM dbo.Tabla_Bitacora_Inventario_Soluciones</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Bitacora_Inventario_Soluciones] SET [IdUsuarioLogin] = @IdUsuarioLogin, [IdSolucion] = @IdSolucion, [FechaTransaccion] = @FechaTransaccion, [TipoTransaccion] = @TipoTransaccion WHERE (([IdBitacoraInventarioSoluciones] = @Original_IdBitacoraInventarioSoluciones) AND ([IdUsuarioLogin] = @Original_IdUsuarioLogin) AND ([IdSolucion] = @Original_IdSolucion) AND ([FechaTransaccion] = @Original_FechaTransaccion));
+SELECT IdBitacoraInventarioSoluciones, IdUsuarioLogin, IdSolucion, FechaTransaccion, TipoTransaccion FROM Tabla_Bitacora_Inventario_Soluciones WHERE (IdBitacoraInventarioSoluciones = @IdBitacoraInventarioSoluciones)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdSolucion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSolucion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoTransaccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdBitacoraInventarioSoluciones" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdBitacoraInventarioSoluciones" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdSolucion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdSolucion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdBitacoraInventarioSoluciones" ColumnName="IdBitacoraInventarioSoluciones" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdBitacoraInventarioSoluciones" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdBitacoraInventarioSoluciones" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdBitacoraInventarioSoluciones" DataSetColumn="IdBitacoraInventarioSoluciones" />
+              <Mapping SourceColumn="IdUsuarioLogin" DataSetColumn="IdUsuarioLogin" />
+              <Mapping SourceColumn="IdSolucion" DataSetColumn="IdSolucion" />
+              <Mapping SourceColumn="FechaTransaccion" DataSetColumn="FechaTransaccion" />
+              <Mapping SourceColumn="TipoTransaccion" DataSetColumn="TipoTransaccion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tabla_Bitacora_Inventario_ProfesorTableAdapter" GeneratorDataComponentClassName="Tabla_Bitacora_Inventario_ProfesorTableAdapter" Name="Tabla_Bitacora_Inventario_Profesor" UserDataComponentName="Tabla_Bitacora_Inventario_ProfesorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Inventario_Reactivos__QuimicosConnectionString (Settings)" DbObjectName="[Inventario_Reactivos _Quimicos].dbo.Tabla_Bitacora_Inventario_Profesor" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Tabla_Bitacora_Inventario_Profesor] WHERE (([IdBitacoraInventarioPersonas] = @Original_IdBitacoraInventarioPersonas) AND ([IdUsuarioLogin] = @Original_IdUsuarioLogin) AND ([IdProfesor] = @Original_IdProfesor) AND ([FechaTransaccion] = @Original_FechaTransaccion))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdBitacoraInventarioPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdBitacoraInventarioPersonas" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProfesor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProfesor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Tabla_Bitacora_Inventario_Profesor] ([IdUsuarioLogin], [IdProfesor], [FechaTransaccion], [TipoTransaccion]) VALUES (@IdUsuarioLogin, @IdProfesor, @FechaTransaccion, @TipoTransaccion);
+SELECT IdBitacoraInventarioPersonas, IdUsuarioLogin, IdProfesor, FechaTransaccion, TipoTransaccion FROM Tabla_Bitacora_Inventario_Profesor WHERE (IdBitacoraInventarioPersonas = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProfesor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProfesor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoTransaccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdBitacoraInventarioPersonas, IdUsuarioLogin, IdProfesor, FechaTransaccion, TipoTransaccion FROM dbo.Tabla_Bitacora_Inventario_Profesor</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Tabla_Bitacora_Inventario_Profesor] SET [IdUsuarioLogin] = @IdUsuarioLogin, [IdProfesor] = @IdProfesor, [FechaTransaccion] = @FechaTransaccion, [TipoTransaccion] = @TipoTransaccion WHERE (([IdBitacoraInventarioPersonas] = @Original_IdBitacoraInventarioPersonas) AND ([IdUsuarioLogin] = @Original_IdUsuarioLogin) AND ([IdProfesor] = @Original_IdProfesor) AND ([FechaTransaccion] = @Original_FechaTransaccion));
+SELECT IdBitacoraInventarioPersonas, IdUsuarioLogin, IdProfesor, FechaTransaccion, TipoTransaccion FROM Tabla_Bitacora_Inventario_Profesor WHERE (IdBitacoraInventarioPersonas = @IdBitacoraInventarioPersonas)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProfesor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProfesor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoTransaccion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoTransaccion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdBitacoraInventarioPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdBitacoraInventarioPersonas" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdUsuarioLogin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdUsuarioLogin" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProfesor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProfesor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FechaTransaccion" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FechaTransaccion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdBitacoraInventarioPersonas" ColumnName="IdBitacoraInventarioPersonas" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdBitacoraInventarioPersonas" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdBitacoraInventarioPersonas" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdBitacoraInventarioPersonas" DataSetColumn="IdBitacoraInventarioPersonas" />
+              <Mapping SourceColumn="IdUsuarioLogin" DataSetColumn="IdUsuarioLogin" />
+              <Mapping SourceColumn="IdProfesor" DataSetColumn="IdProfesor" />
+              <Mapping SourceColumn="FechaTransaccion" DataSetColumn="FechaTransaccion" />
+              <Mapping SourceColumn="TipoTransaccion" DataSetColumn="TipoTransaccion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetReactivos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetReactivos" msprop:Generator_UserDSName="DataSetReactivos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tabla_Movimiento_Inventario" msprop:Generator_TableClassName="Tabla_Movimiento_InventarioDataTable" msprop:Generator_TableVarName="tableTabla_Movimiento_Inventario" msprop:Generator_TablePropName="Tabla_Movimiento_Inventario" msprop:Generator_RowDeletingName="Tabla_Movimiento_InventarioRowDeleting" msprop:Generator_RowChangingName="Tabla_Movimiento_InventarioRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Movimiento_InventarioRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Movimiento_InventarioRowDeleted" msprop:Generator_UserTableName="Tabla_Movimiento_Inventario" msprop:Generator_RowChangedName="Tabla_Movimiento_InventarioRowChanged" msprop:Generator_RowEvArgName="Tabla_Movimiento_InventarioRowChangeEvent" msprop:Generator_RowClassName="Tabla_Movimiento_InventarioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdProfesorMovimiento" msprop:Generator_ColumnVarNameInTable="columnIdProfesorMovimiento" msprop:Generator_ColumnPropNameInRow="IdProfesorMovimiento" msprop:Generator_ColumnPropNameInTable="IdProfesorMovimientoColumn" msprop:Generator_UserColumnName="IdProfesorMovimiento" type="xs:int" />
+              <xs:element name="IdUsuarioMovimiento" msprop:Generator_ColumnVarNameInTable="columnIdUsuarioMovimiento" msprop:Generator_ColumnPropNameInRow="IdUsuarioMovimiento" msprop:Generator_ColumnPropNameInTable="IdUsuarioMovimientoColumn" msprop:Generator_UserColumnName="IdUsuarioMovimiento" type="xs:int" />
+              <xs:element name="IdReactivoMovimiento" msprop:Generator_ColumnVarNameInTable="columnIdReactivoMovimiento" msprop:Generator_ColumnPropNameInRow="IdReactivoMovimiento" msprop:Generator_ColumnPropNameInTable="IdReactivoMovimientoColumn" msprop:Generator_UserColumnName="IdReactivoMovimiento" type="xs:int" />
+              <xs:element name="IdCatMovimientoInventario" msprop:Generator_ColumnVarNameInTable="columnIdCatMovimientoInventario" msprop:Generator_ColumnPropNameInRow="IdCatMovimientoInventario" msprop:Generator_ColumnPropNameInTable="IdCatMovimientoInventarioColumn" msprop:Generator_UserColumnName="IdCatMovimientoInventario" type="xs:int" />
+              <xs:element name="FechaTransaccion" msprop:Generator_ColumnVarNameInTable="columnFechaTransaccion" msprop:Generator_ColumnPropNameInRow="FechaTransaccion" msprop:Generator_ColumnPropNameInTable="FechaTransaccionColumn" msprop:Generator_UserColumnName="FechaTransaccion" type="xs:dateTime" />
+              <xs:element name="ComentarioMovimientoInventario" msprop:Generator_ColumnVarNameInTable="columnComentarioMovimientoInventario" msprop:Generator_ColumnPropNameInRow="ComentarioMovimientoInventario" msprop:Generator_ColumnPropNameInTable="ComentarioMovimientoInventarioColumn" msprop:Generator_UserColumnName="ComentarioMovimientoInventario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CantidadReactivoMovimiento" msprop:Generator_ColumnVarNameInTable="columnCantidadReactivoMovimiento" msprop:Generator_ColumnPropNameInRow="CantidadReactivoMovimiento" msprop:Generator_ColumnPropNameInTable="CantidadReactivoMovimientoColumn" msprop:Generator_UserColumnName="CantidadReactivoMovimiento" type="xs:double" />
+              <xs:element name="NombreProfesor" msprop:Generator_ColumnVarNameInTable="columnNombreProfesor" msprop:Generator_ColumnPropNameInRow="NombreProfesor" msprop:Generator_ColumnPropNameInTable="NombreProfesorColumn" msprop:Generator_UserColumnName="NombreProfesor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreUsuario" msprop:Generator_ColumnVarNameInTable="columnNombreUsuario" msprop:Generator_ColumnPropNameInRow="NombreUsuario" msprop:Generator_ColumnPropNameInTable="NombreUsuarioColumn" msprop:Generator_UserColumnName="NombreUsuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreMovimiento" msprop:Generator_ColumnVarNameInTable="columnNombreMovimiento" msprop:Generator_ColumnPropNameInRow="NombreMovimiento" msprop:Generator_ColumnPropNameInTable="NombreMovimientoColumn" msprop:Generator_UserColumnName="NombreMovimiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdUnidadAlmacenamientoReactivo" msprop:Generator_ColumnVarNameInTable="columnIdUnidadAlmacenamientoReactivo" msprop:Generator_ColumnPropNameInRow="IdUnidadAlmacenamientoReactivo" msprop:Generator_ColumnPropNameInTable="IdUnidadAlmacenamientoReactivoColumn" msprop:Generator_UserColumnName="IdUnidadAlmacenamientoReactivo" type="xs:int" />
+              <xs:element name="NombreUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnNombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="NombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="NombreUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="NombreUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnSiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="SiglaUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="SiglaUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdMovimientoInventario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdMovimientoInventario" msprop:Generator_ColumnPropNameInRow="IdMovimientoInventario" msprop:Generator_ColumnPropNameInTable="IdMovimientoInventarioColumn" msprop:Generator_UserColumnName="IdMovimientoInventario" type="xs:int" />
+              <xs:element name="CodigoReactivo" msprop:Generator_ColumnVarNameInTable="columnCodigoReactivo" msprop:Generator_ColumnPropNameInRow="CodigoReactivo" msprop:Generator_ColumnPropNameInTable="CodigoReactivoColumn" msprop:Generator_UserColumnName="CodigoReactivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Movimiento_Inventario_Solucion" msprop:Generator_TableClassName="Tabla_Movimiento_Inventario_SolucionDataTable" msprop:Generator_TableVarName="tableTabla_Movimiento_Inventario_Solucion" msprop:Generator_TablePropName="Tabla_Movimiento_Inventario_Solucion" msprop:Generator_RowDeletingName="Tabla_Movimiento_Inventario_SolucionRowDeleting" msprop:Generator_RowChangingName="Tabla_Movimiento_Inventario_SolucionRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Movimiento_Inventario_SolucionRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Movimiento_Inventario_SolucionRowDeleted" msprop:Generator_UserTableName="Tabla_Movimiento_Inventario_Solucion" msprop:Generator_RowChangedName="Tabla_Movimiento_Inventario_SolucionRowChanged" msprop:Generator_RowEvArgName="Tabla_Movimiento_Inventario_SolucionRowChangeEvent" msprop:Generator_RowClassName="Tabla_Movimiento_Inventario_SolucionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdMovimientoInventarioSolucion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdMovimientoInventarioSolucion" msprop:Generator_ColumnPropNameInRow="IdMovimientoInventarioSolucion" msprop:Generator_ColumnPropNameInTable="IdMovimientoInventarioSolucionColumn" msprop:Generator_UserColumnName="IdMovimientoInventarioSolucion" type="xs:int" />
+              <xs:element name="IdProfesorMovSolucion" msprop:Generator_ColumnVarNameInTable="columnIdProfesorMovSolucion" msprop:Generator_ColumnPropNameInRow="IdProfesorMovSolucion" msprop:Generator_ColumnPropNameInTable="IdProfesorMovSolucionColumn" msprop:Generator_UserColumnName="IdProfesorMovSolucion" type="xs:int" />
+              <xs:element name="IdUsuarioMovSolucion" msprop:Generator_ColumnVarNameInTable="columnIdUsuarioMovSolucion" msprop:Generator_ColumnPropNameInRow="IdUsuarioMovSolucion" msprop:Generator_ColumnPropNameInTable="IdUsuarioMovSolucionColumn" msprop:Generator_UserColumnName="IdUsuarioMovSolucion" type="xs:int" />
+              <xs:element name="IdSolucionReactivoMovSolucion" msprop:Generator_ColumnVarNameInTable="columnIdSolucionReactivoMovSolucion" msprop:Generator_ColumnPropNameInRow="IdSolucionReactivoMovSolucion" msprop:Generator_ColumnPropNameInTable="IdSolucionReactivoMovSolucionColumn" msprop:Generator_UserColumnName="IdSolucionReactivoMovSolucion" type="xs:int" />
+              <xs:element name="IdCatMovimiento" msprop:Generator_ColumnVarNameInTable="columnIdCatMovimiento" msprop:Generator_ColumnPropNameInRow="IdCatMovimiento" msprop:Generator_ColumnPropNameInTable="IdCatMovimientoColumn" msprop:Generator_UserColumnName="IdCatMovimiento" type="xs:int" />
+              <xs:element name="FechaTransaccion" msprop:Generator_ColumnVarNameInTable="columnFechaTransaccion" msprop:Generator_ColumnPropNameInRow="FechaTransaccion" msprop:Generator_ColumnPropNameInTable="FechaTransaccionColumn" msprop:Generator_UserColumnName="FechaTransaccion" type="xs:dateTime" />
+              <xs:element name="ComentarioMovSolucion" msprop:Generator_ColumnVarNameInTable="columnComentarioMovSolucion" msprop:Generator_ColumnPropNameInRow="ComentarioMovSolucion" msprop:Generator_ColumnPropNameInTable="ComentarioMovSolucionColumn" msprop:Generator_UserColumnName="ComentarioMovSolucion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CantidadMovSolucion" msprop:Generator_ColumnVarNameInTable="columnCantidadMovSolucion" msprop:Generator_ColumnPropNameInRow="CantidadMovSolucion" msprop:Generator_ColumnPropNameInTable="CantidadMovSolucionColumn" msprop:Generator_UserColumnName="CantidadMovSolucion" type="xs:double" />
+              <xs:element name="NombreProfesor" msprop:Generator_ColumnVarNameInTable="columnNombreProfesor" msprop:Generator_ColumnPropNameInRow="NombreProfesor" msprop:Generator_ColumnPropNameInTable="NombreProfesorColumn" msprop:Generator_UserColumnName="NombreProfesor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreUsuario" msprop:Generator_ColumnVarNameInTable="columnNombreUsuario" msprop:Generator_ColumnPropNameInRow="NombreUsuario" msprop:Generator_ColumnPropNameInTable="NombreUsuarioColumn" msprop:Generator_UserColumnName="NombreUsuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreSolucionReactivo" msprop:Generator_ColumnVarNameInTable="columnNombreSolucionReactivo" msprop:Generator_ColumnPropNameInRow="NombreSolucionReactivo" msprop:Generator_ColumnPropNameInTable="NombreSolucionReactivoColumn" msprop:Generator_UserColumnName="NombreSolucionReactivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreMovimiento" msprop:Generator_ColumnVarNameInTable="columnNombreMovimiento" msprop:Generator_ColumnPropNameInRow="NombreMovimiento" msprop:Generator_ColumnPropNameInTable="NombreMovimientoColumn" msprop:Generator_UserColumnName="NombreMovimiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdUnidadAlmacenamientoSolucion" msprop:Generator_ColumnVarNameInTable="columnIdUnidadAlmacenamientoSolucion" msprop:Generator_ColumnPropNameInRow="IdUnidadAlmacenamientoSolucion" msprop:Generator_ColumnPropNameInTable="IdUnidadAlmacenamientoSolucionColumn" msprop:Generator_UserColumnName="IdUnidadAlmacenamientoSolucion" type="xs:int" />
+              <xs:element name="NombreUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnNombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="NombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="NombreUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="NombreUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnSiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="SiglaUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="SiglaUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Usuario" msprop:Generator_TableClassName="Tabla_UsuarioDataTable" msprop:Generator_TableVarName="tableTabla_Usuario" msprop:Generator_TablePropName="Tabla_Usuario" msprop:Generator_RowDeletingName="Tabla_UsuarioRowDeleting" msprop:Generator_RowChangingName="Tabla_UsuarioRowChanging" msprop:Generator_RowEvHandlerName="Tabla_UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_UsuarioRowDeleted" msprop:Generator_UserTableName="Tabla_Usuario" msprop:Generator_RowChangedName="Tabla_UsuarioRowChanged" msprop:Generator_RowEvArgName="Tabla_UsuarioRowChangeEvent" msprop:Generator_RowClassName="Tabla_UsuarioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdUsuario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdUsuario" msprop:Generator_ColumnPropNameInRow="IdUsuario" msprop:Generator_ColumnPropNameInTable="IdUsuarioColumn" msprop:Generator_UserColumnName="IdUsuario" type="xs:int" />
+              <xs:element name="Cedula" msprop:Generator_ColumnVarNameInTable="columnCedula" msprop:Generator_ColumnPropNameInRow="Cedula" msprop:Generator_ColumnPropNameInTable="CedulaColumn" msprop:Generator_UserColumnName="Cedula">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreUsuarioSql" msprop:Generator_ColumnVarNameInTable="columnNombreUsuarioSql" msprop:Generator_ColumnPropNameInRow="NombreUsuarioSql" msprop:Generator_ColumnPropNameInTable="NombreUsuarioSqlColumn" msprop:Generator_UserColumnName="NombreUsuarioSql">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ContraseñaUsuarioSql" msprop:Generator_ColumnVarNameInTable="columnContraseñaUsuarioSql" msprop:Generator_ColumnPropNameInRow="ContraseñaUsuarioSql" msprop:Generator_ColumnPropNameInTable="ContraseñaUsuarioSqlColumn" msprop:Generator_UserColumnName="ContraseñaUsuarioSql">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreUsuario" msprop:Generator_ColumnVarNameInTable="columnNombreUsuario" msprop:Generator_ColumnPropNameInRow="NombreUsuario" msprop:Generator_ColumnPropNameInTable="NombreUsuarioColumn" msprop:Generator_UserColumnName="NombreUsuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellido1" msprop:Generator_ColumnVarNameInTable="columnApellido1" msprop:Generator_ColumnPropNameInRow="Apellido1" msprop:Generator_ColumnPropNameInTable="Apellido1Column" msprop:Generator_UserColumnName="Apellido1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellido2" msprop:Generator_ColumnVarNameInTable="columnApellido2" msprop:Generator_ColumnPropNameInRow="Apellido2" msprop:Generator_ColumnPropNameInTable="Apellido2Column" msprop:Generator_UserColumnName="Apellido2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdCatalogoEstado" msprop:Generator_ColumnVarNameInTable="columnIdCatalogoEstado" msprop:Generator_ColumnPropNameInRow="IdCatalogoEstado" msprop:Generator_ColumnPropNameInTable="IdCatalogoEstadoColumn" msprop:Generator_UserColumnName="IdCatalogoEstado" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Profesor" msprop:Generator_TableClassName="Tabla_ProfesorDataTable" msprop:Generator_TableVarName="tableTabla_Profesor" msprop:Generator_TablePropName="Tabla_Profesor" msprop:Generator_RowDeletingName="Tabla_ProfesorRowDeleting" msprop:Generator_RowChangingName="Tabla_ProfesorRowChanging" msprop:Generator_RowEvHandlerName="Tabla_ProfesorRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_ProfesorRowDeleted" msprop:Generator_UserTableName="Tabla_Profesor" msprop:Generator_RowChangedName="Tabla_ProfesorRowChanged" msprop:Generator_RowEvArgName="Tabla_ProfesorRowChangeEvent" msprop:Generator_RowClassName="Tabla_ProfesorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdProfesor" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProfesor" msprop:Generator_ColumnPropNameInRow="IdProfesor" msprop:Generator_ColumnPropNameInTable="IdProfesorColumn" msprop:Generator_UserColumnName="IdProfesor" type="xs:int" />
+              <xs:element name="Cedula" msprop:Generator_ColumnVarNameInTable="columnCedula" msprop:Generator_ColumnPropNameInRow="Cedula" msprop:Generator_ColumnPropNameInTable="CedulaColumn" msprop:Generator_UserColumnName="Cedula">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreProfesor" msprop:Generator_ColumnVarNameInTable="columnNombreProfesor" msprop:Generator_ColumnPropNameInRow="NombreProfesor" msprop:Generator_ColumnPropNameInTable="NombreProfesorColumn" msprop:Generator_UserColumnName="NombreProfesor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellido1" msprop:Generator_ColumnVarNameInTable="columnApellido1" msprop:Generator_ColumnPropNameInRow="Apellido1" msprop:Generator_ColumnPropNameInTable="Apellido1Column" msprop:Generator_UserColumnName="Apellido1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellido2" msprop:Generator_ColumnVarNameInTable="columnApellido2" msprop:Generator_ColumnPropNameInRow="Apellido2" msprop:Generator_ColumnPropNameInTable="Apellido2Column" msprop:Generator_UserColumnName="Apellido2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdCatalogoProfesionProfe" msprop:Generator_ColumnVarNameInTable="columnIdCatalogoProfesionProfe" msprop:Generator_ColumnPropNameInRow="IdCatalogoProfesionProfe" msprop:Generator_ColumnPropNameInTable="IdCatalogoProfesionProfeColumn" msprop:Generator_UserColumnName="IdCatalogoProfesionProfe" type="xs:int" />
+              <xs:element name="IdCatalogoEstado" msprop:Generator_ColumnVarNameInTable="columnIdCatalogoEstado" msprop:Generator_ColumnPropNameInRow="IdCatalogoEstado" msprop:Generator_ColumnPropNameInTable="IdCatalogoEstadoColumn" msprop:Generator_UserColumnName="IdCatalogoEstado" type="xs:int" />
+              <xs:element name="IdUsuario" msprop:Generator_ColumnVarNameInTable="columnIdUsuario" msprop:Generator_ColumnPropNameInRow="IdUsuario" msprop:Generator_ColumnPropNameInTable="IdUsuarioColumn" msprop:Generator_UserColumnName="IdUsuario" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Reactivo_Inventario" msprop:Generator_TableClassName="Tabla_Reactivo_InventarioDataTable" msprop:Generator_TableVarName="tableTabla_Reactivo_Inventario" msprop:Generator_TablePropName="Tabla_Reactivo_Inventario" msprop:Generator_RowDeletingName="Tabla_Reactivo_InventarioRowDeleting" msprop:Generator_RowChangingName="Tabla_Reactivo_InventarioRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Reactivo_InventarioRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Reactivo_InventarioRowDeleted" msprop:Generator_UserTableName="Tabla_Reactivo_Inventario" msprop:Generator_RowChangedName="Tabla_Reactivo_InventarioRowChanged" msprop:Generator_RowEvArgName="Tabla_Reactivo_InventarioRowChangeEvent" msprop:Generator_RowClassName="Tabla_Reactivo_InventarioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdReactivoInventario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdReactivoInventario" msprop:Generator_ColumnPropNameInRow="IdReactivoInventario" msprop:Generator_ColumnPropNameInTable="IdReactivoInventarioColumn" msprop:Generator_UserColumnName="IdReactivoInventario" type="xs:int" />
+              <xs:element name="CodigoReactivo" msprop:Generator_ColumnVarNameInTable="columnCodigoReactivo" msprop:Generator_ColumnPropNameInRow="CodigoReactivo" msprop:Generator_ColumnPropNameInTable="CodigoReactivoColumn" msprop:Generator_UserColumnName="CodigoReactivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreReactivo" msprop:Generator_ColumnVarNameInTable="columnNombreReactivo" msprop:Generator_ColumnPropNameInRow="NombreReactivo" msprop:Generator_ColumnPropNameInTable="NombreReactivoColumn" msprop:Generator_UserColumnName="NombreReactivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreAlternativo" msprop:Generator_ColumnVarNameInTable="columnNombreAlternativo" msprop:Generator_ColumnPropNameInRow="NombreAlternativo" msprop:Generator_ColumnPropNameInTable="NombreAlternativoColumn" msprop:Generator_UserColumnName="NombreAlternativo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormulaReactivo" msprop:Generator_ColumnVarNameInTable="columnFormulaReactivo" msprop:Generator_ColumnPropNameInRow="FormulaReactivo" msprop:Generator_ColumnPropNameInTable="FormulaReactivoColumn" msprop:Generator_UserColumnName="FormulaReactivo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CantidadExistencia" msprop:Generator_ColumnVarNameInTable="columnCantidadExistencia" msprop:Generator_ColumnPropNameInRow="CantidadExistencia" msprop:Generator_ColumnPropNameInTable="CantidadExistenciaColumn" msprop:Generator_UserColumnName="CantidadExistencia" type="xs:double" />
+              <xs:element name="UbicacionReactivo" msprop:Generator_ColumnVarNameInTable="columnUbicacionReactivo" msprop:Generator_ColumnPropNameInRow="UbicacionReactivo" msprop:Generator_ColumnPropNameInTable="UbicacionReactivoColumn" msprop:Generator_UserColumnName="UbicacionReactivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ComentarioReactivo" msprop:Generator_ColumnVarNameInTable="columnComentarioReactivo" msprop:Generator_ColumnPropNameInRow="ComentarioReactivo" msprop:Generator_ColumnPropNameInTable="ComentarioReactivoColumn" msprop:Generator_UserColumnName="ComentarioReactivo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdUsuario" msprop:Generator_ColumnVarNameInTable="columnIdUsuario" msprop:Generator_ColumnPropNameInRow="IdUsuario" msprop:Generator_ColumnPropNameInTable="IdUsuarioColumn" msprop:Generator_UserColumnName="IdUsuario" type="xs:int" />
+              <xs:element name="NombreClasificacion" msprop:Generator_ColumnVarNameInTable="columnNombreClasificacion" msprop:Generator_ColumnPropNameInRow="NombreClasificacion" msprop:Generator_ColumnPropNameInTable="NombreClasificacionColumn" msprop:Generator_UserColumnName="NombreClasificacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreEstadoFisico" msprop:Generator_ColumnVarNameInTable="columnNombreEstadoFisico" msprop:Generator_ColumnPropNameInRow="NombreEstadoFisico" msprop:Generator_ColumnPropNameInTable="NombreEstadoFisicoColumn" msprop:Generator_UserColumnName="NombreEstadoFisico">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnNombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="NombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="NombreUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="NombreUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnSiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="SiglaUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="SiglaUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Solucion_Reactivo" msprop:Generator_TableClassName="Tabla_Solucion_ReactivoDataTable" msprop:Generator_TableVarName="tableTabla_Solucion_Reactivo" msprop:Generator_TablePropName="Tabla_Solucion_Reactivo" msprop:Generator_RowDeletingName="Tabla_Solucion_ReactivoRowDeleting" msprop:Generator_RowChangingName="Tabla_Solucion_ReactivoRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Solucion_ReactivoRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Solucion_ReactivoRowDeleted" msprop:Generator_UserTableName="Tabla_Solucion_Reactivo" msprop:Generator_RowChangedName="Tabla_Solucion_ReactivoRowChanged" msprop:Generator_RowEvArgName="Tabla_Solucion_ReactivoRowChangeEvent" msprop:Generator_RowClassName="Tabla_Solucion_ReactivoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdSolucionReactivo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdSolucionReactivo" msprop:Generator_ColumnPropNameInRow="IdSolucionReactivo" msprop:Generator_ColumnPropNameInTable="IdSolucionReactivoColumn" msprop:Generator_UserColumnName="IdSolucionReactivo" type="xs:int" />
+              <xs:element name="NombreSolucionReactivo" msprop:Generator_ColumnVarNameInTable="columnNombreSolucionReactivo" msprop:Generator_ColumnPropNameInRow="NombreSolucionReactivo" msprop:Generator_ColumnPropNameInTable="NombreSolucionReactivoColumn" msprop:Generator_UserColumnName="NombreSolucionReactivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CantidadExistencia" msprop:Generator_ColumnVarNameInTable="columnCantidadExistencia" msprop:Generator_ColumnPropNameInRow="CantidadExistencia" msprop:Generator_ColumnPropNameInTable="CantidadExistenciaColumn" msprop:Generator_UserColumnName="CantidadExistencia" type="xs:double" />
+              <xs:element name="ComentarioSolucion" msprop:Generator_ColumnVarNameInTable="columnComentarioSolucion" msprop:Generator_ColumnPropNameInRow="ComentarioSolucion" msprop:Generator_ColumnPropNameInTable="ComentarioSolucionColumn" msprop:Generator_UserColumnName="ComentarioSolucion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UbicacionSolucion" msprop:Generator_ColumnVarNameInTable="columnUbicacionSolucion" msprop:Generator_ColumnPropNameInRow="UbicacionSolucion" msprop:Generator_ColumnPropNameInTable="UbicacionSolucionColumn" msprop:Generator_UserColumnName="UbicacionSolucion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormulaSolucion" msprop:Generator_ColumnVarNameInTable="columnFormulaSolucion" msprop:Generator_ColumnPropNameInRow="FormulaSolucion" msprop:Generator_ColumnPropNameInTable="FormulaSolucionColumn" msprop:Generator_UserColumnName="FormulaSolucion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreClasificacion" msprop:Generator_ColumnVarNameInTable="columnNombreClasificacion" msprop:Generator_ColumnPropNameInRow="NombreClasificacion" msprop:Generator_ColumnPropNameInTable="NombreClasificacionColumn" msprop:Generator_UserColumnName="NombreClasificacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreEstadoFisico" msprop:Generator_ColumnVarNameInTable="columnNombreEstadoFisico" msprop:Generator_ColumnPropNameInRow="NombreEstadoFisico" msprop:Generator_ColumnPropNameInTable="NombreEstadoFisicoColumn" msprop:Generator_UserColumnName="NombreEstadoFisico">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnNombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="NombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="NombreUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="NombreUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnSiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="SiglaUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="SiglaUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreUsuario" msprop:Generator_ColumnVarNameInTable="columnNombreUsuario" msprop:Generator_ColumnPropNameInRow="NombreUsuario" msprop:Generator_ColumnPropNameInTable="NombreUsuarioColumn" msprop:Generator_UserColumnName="NombreUsuario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Catalogo_Unidad_Almacenamiento_Reactivo" msprop:Generator_TableClassName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoDataTable" msprop:Generator_TableVarName="tableTabla_Catalogo_Unidad_Almacenamiento_Reactivo" msprop:Generator_TablePropName="Tabla_Catalogo_Unidad_Almacenamiento_Reactivo" msprop:Generator_RowDeletingName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoRowDeleting" msprop:Generator_RowChangingName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoRowDeleted" msprop:Generator_UserTableName="Tabla_Catalogo_Unidad_Almacenamiento_Reactivo" msprop:Generator_RowChangedName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoRowChanged" msprop:Generator_RowEvArgName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoRowChangeEvent" msprop:Generator_RowClassName="Tabla_Catalogo_Unidad_Almacenamiento_ReactivoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCatalogoUnidadAlmacenamientoReactivo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCatalogoUnidadAlmacenamientoReactivo" msprop:Generator_ColumnPropNameInRow="IdCatalogoUnidadAlmacenamientoReactivo" msprop:Generator_ColumnPropNameInTable="IdCatalogoUnidadAlmacenamientoReactivoColumn" msprop:Generator_UserColumnName="IdCatalogoUnidadAlmacenamientoReactivo" type="xs:int" />
+              <xs:element name="NombreUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnNombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="NombreUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="NombreUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="NombreUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnVarNameInTable="columnSiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInRow="SiglaUnidadAlmacenamiento" msprop:Generator_ColumnPropNameInTable="SiglaUnidadAlmacenamientoColumn" msprop:Generator_UserColumnName="SiglaUnidadAlmacenamiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Catalogo_Movimiento_Inventario" msprop:Generator_TableClassName="Tabla_Catalogo_Movimiento_InventarioDataTable" msprop:Generator_TableVarName="tableTabla_Catalogo_Movimiento_Inventario" msprop:Generator_TablePropName="Tabla_Catalogo_Movimiento_Inventario" msprop:Generator_RowDeletingName="Tabla_Catalogo_Movimiento_InventarioRowDeleting" msprop:Generator_RowChangingName="Tabla_Catalogo_Movimiento_InventarioRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Catalogo_Movimiento_InventarioRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Catalogo_Movimiento_InventarioRowDeleted" msprop:Generator_UserTableName="Tabla_Catalogo_Movimiento_Inventario" msprop:Generator_RowChangedName="Tabla_Catalogo_Movimiento_InventarioRowChanged" msprop:Generator_RowEvArgName="Tabla_Catalogo_Movimiento_InventarioRowChangeEvent" msprop:Generator_RowClassName="Tabla_Catalogo_Movimiento_InventarioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCatalogoMovimientoInventario" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCatalogoMovimientoInventario" msprop:Generator_ColumnPropNameInRow="IdCatalogoMovimientoInventario" msprop:Generator_ColumnPropNameInTable="IdCatalogoMovimientoInventarioColumn" msprop:Generator_UserColumnName="IdCatalogoMovimientoInventario" type="xs:int" />
+              <xs:element name="NombreMovimiento" msprop:Generator_ColumnVarNameInTable="columnNombreMovimiento" msprop:Generator_ColumnPropNameInRow="NombreMovimiento" msprop:Generator_ColumnPropNameInTable="NombreMovimientoColumn" msprop:Generator_UserColumnName="NombreMovimiento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Catalogo_Estado_Fisico_Reactivo" msprop:Generator_TableClassName="Tabla_Catalogo_Estado_Fisico_ReactivoDataTable" msprop:Generator_TableVarName="tableTabla_Catalogo_Estado_Fisico_Reactivo" msprop:Generator_TablePropName="Tabla_Catalogo_Estado_Fisico_Reactivo" msprop:Generator_RowDeletingName="Tabla_Catalogo_Estado_Fisico_ReactivoRowDeleting" msprop:Generator_RowChangingName="Tabla_Catalogo_Estado_Fisico_ReactivoRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Catalogo_Estado_Fisico_ReactivoRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Catalogo_Estado_Fisico_ReactivoRowDeleted" msprop:Generator_UserTableName="Tabla_Catalogo_Estado_Fisico_Reactivo" msprop:Generator_RowChangedName="Tabla_Catalogo_Estado_Fisico_ReactivoRowChanged" msprop:Generator_RowEvArgName="Tabla_Catalogo_Estado_Fisico_ReactivoRowChangeEvent" msprop:Generator_RowClassName="Tabla_Catalogo_Estado_Fisico_ReactivoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCatalogoEstadoFisicoReactivo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCatalogoEstadoFisicoReactivo" msprop:Generator_ColumnPropNameInRow="IdCatalogoEstadoFisicoReactivo" msprop:Generator_ColumnPropNameInTable="IdCatalogoEstadoFisicoReactivoColumn" msprop:Generator_UserColumnName="IdCatalogoEstadoFisicoReactivo" type="xs:int" />
+              <xs:element name="NombreEstadoFisico" msprop:Generator_ColumnVarNameInTable="columnNombreEstadoFisico" msprop:Generator_ColumnPropNameInRow="NombreEstadoFisico" msprop:Generator_ColumnPropNameInTable="NombreEstadoFisicoColumn" msprop:Generator_UserColumnName="NombreEstadoFisico">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Catalogo_Estado" msprop:Generator_TableClassName="Tabla_Catalogo_EstadoDataTable" msprop:Generator_TableVarName="tableTabla_Catalogo_Estado" msprop:Generator_TablePropName="Tabla_Catalogo_Estado" msprop:Generator_RowDeletingName="Tabla_Catalogo_EstadoRowDeleting" msprop:Generator_RowChangingName="Tabla_Catalogo_EstadoRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Catalogo_EstadoRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Catalogo_EstadoRowDeleted" msprop:Generator_UserTableName="Tabla_Catalogo_Estado" msprop:Generator_RowChangedName="Tabla_Catalogo_EstadoRowChanged" msprop:Generator_RowEvArgName="Tabla_Catalogo_EstadoRowChangeEvent" msprop:Generator_RowClassName="Tabla_Catalogo_EstadoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCatalogoEstado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCatalogoEstado" msprop:Generator_ColumnPropNameInRow="IdCatalogoEstado" msprop:Generator_ColumnPropNameInTable="IdCatalogoEstadoColumn" msprop:Generator_UserColumnName="IdCatalogoEstado" type="xs:int" />
+              <xs:element name="NombreEstado" msprop:Generator_ColumnVarNameInTable="columnNombreEstado" msprop:Generator_ColumnPropNameInRow="NombreEstado" msprop:Generator_ColumnPropNameInTable="NombreEstadoColumn" msprop:Generator_UserColumnName="NombreEstado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Catalogo_Clasificacion_Reactivo" msprop:Generator_TableClassName="Tabla_Catalogo_Clasificacion_ReactivoDataTable" msprop:Generator_TableVarName="tableTabla_Catalogo_Clasificacion_Reactivo" msprop:Generator_TablePropName="Tabla_Catalogo_Clasificacion_Reactivo" msprop:Generator_RowDeletingName="Tabla_Catalogo_Clasificacion_ReactivoRowDeleting" msprop:Generator_RowChangingName="Tabla_Catalogo_Clasificacion_ReactivoRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Catalogo_Clasificacion_ReactivoRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Catalogo_Clasificacion_ReactivoRowDeleted" msprop:Generator_UserTableName="Tabla_Catalogo_Clasificacion_Reactivo" msprop:Generator_RowChangedName="Tabla_Catalogo_Clasificacion_ReactivoRowChanged" msprop:Generator_RowEvArgName="Tabla_Catalogo_Clasificacion_ReactivoRowChangeEvent" msprop:Generator_RowClassName="Tabla_Catalogo_Clasificacion_ReactivoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCatalogoClasificacionReactivos" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCatalogoClasificacionReactivos" msprop:Generator_ColumnPropNameInRow="IdCatalogoClasificacionReactivos" msprop:Generator_ColumnPropNameInTable="IdCatalogoClasificacionReactivosColumn" msprop:Generator_UserColumnName="IdCatalogoClasificacionReactivos" type="xs:int" />
+              <xs:element name="NombreClasificacion" msprop:Generator_ColumnVarNameInTable="columnNombreClasificacion" msprop:Generator_ColumnPropNameInRow="NombreClasificacion" msprop:Generator_ColumnPropNameInTable="NombreClasificacionColumn" msprop:Generator_UserColumnName="NombreClasificacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Bitacora_Inventario_Reactivos" msprop:Generator_TableClassName="Tabla_Bitacora_Inventario_ReactivosDataTable" msprop:Generator_TableVarName="tableTabla_Bitacora_Inventario_Reactivos" msprop:Generator_TablePropName="Tabla_Bitacora_Inventario_Reactivos" msprop:Generator_RowDeletingName="Tabla_Bitacora_Inventario_ReactivosRowDeleting" msprop:Generator_RowChangingName="Tabla_Bitacora_Inventario_ReactivosRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Bitacora_Inventario_ReactivosRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Bitacora_Inventario_ReactivosRowDeleted" msprop:Generator_UserTableName="Tabla_Bitacora_Inventario_Reactivos" msprop:Generator_RowChangedName="Tabla_Bitacora_Inventario_ReactivosRowChanged" msprop:Generator_RowEvArgName="Tabla_Bitacora_Inventario_ReactivosRowChangeEvent" msprop:Generator_RowClassName="Tabla_Bitacora_Inventario_ReactivosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdBitacoraInventarioReactivos" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdBitacoraInventarioReactivos" msprop:Generator_ColumnPropNameInRow="IdBitacoraInventarioReactivos" msprop:Generator_ColumnPropNameInTable="IdBitacoraInventarioReactivosColumn" msprop:Generator_UserColumnName="IdBitacoraInventarioReactivos" type="xs:int" />
+              <xs:element name="IdUsuarioLogin" msprop:Generator_ColumnVarNameInTable="columnIdUsuarioLogin" msprop:Generator_ColumnPropNameInRow="IdUsuarioLogin" msprop:Generator_ColumnPropNameInTable="IdUsuarioLoginColumn" msprop:Generator_UserColumnName="IdUsuarioLogin" type="xs:int" />
+              <xs:element name="IdReactivoInventario" msprop:Generator_ColumnVarNameInTable="columnIdReactivoInventario" msprop:Generator_ColumnPropNameInRow="IdReactivoInventario" msprop:Generator_ColumnPropNameInTable="IdReactivoInventarioColumn" msprop:Generator_UserColumnName="IdReactivoInventario" type="xs:int" />
+              <xs:element name="FechaTransaccion" msprop:Generator_ColumnVarNameInTable="columnFechaTransaccion" msprop:Generator_ColumnPropNameInRow="FechaTransaccion" msprop:Generator_ColumnPropNameInTable="FechaTransaccionColumn" msprop:Generator_UserColumnName="FechaTransaccion" type="xs:dateTime" />
+              <xs:element name="TipoTransaccion" msprop:Generator_ColumnVarNameInTable="columnTipoTransaccion" msprop:Generator_ColumnPropNameInRow="TipoTransaccion" msprop:Generator_ColumnPropNameInTable="TipoTransaccionColumn" msprop:Generator_UserColumnName="TipoTransaccion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Bitacora_Inventario_Soluciones" msprop:Generator_TableClassName="Tabla_Bitacora_Inventario_SolucionesDataTable" msprop:Generator_TableVarName="tableTabla_Bitacora_Inventario_Soluciones" msprop:Generator_TablePropName="Tabla_Bitacora_Inventario_Soluciones" msprop:Generator_RowDeletingName="Tabla_Bitacora_Inventario_SolucionesRowDeleting" msprop:Generator_RowChangingName="Tabla_Bitacora_Inventario_SolucionesRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Bitacora_Inventario_SolucionesRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Bitacora_Inventario_SolucionesRowDeleted" msprop:Generator_UserTableName="Tabla_Bitacora_Inventario_Soluciones" msprop:Generator_RowChangedName="Tabla_Bitacora_Inventario_SolucionesRowChanged" msprop:Generator_RowEvArgName="Tabla_Bitacora_Inventario_SolucionesRowChangeEvent" msprop:Generator_RowClassName="Tabla_Bitacora_Inventario_SolucionesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdBitacoraInventarioSoluciones" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdBitacoraInventarioSoluciones" msprop:Generator_ColumnPropNameInRow="IdBitacoraInventarioSoluciones" msprop:Generator_ColumnPropNameInTable="IdBitacoraInventarioSolucionesColumn" msprop:Generator_UserColumnName="IdBitacoraInventarioSoluciones" type="xs:int" />
+              <xs:element name="IdUsuarioLogin" msprop:Generator_ColumnVarNameInTable="columnIdUsuarioLogin" msprop:Generator_ColumnPropNameInRow="IdUsuarioLogin" msprop:Generator_ColumnPropNameInTable="IdUsuarioLoginColumn" msprop:Generator_UserColumnName="IdUsuarioLogin" type="xs:int" />
+              <xs:element name="IdSolucion" msprop:Generator_ColumnVarNameInTable="columnIdSolucion" msprop:Generator_ColumnPropNameInRow="IdSolucion" msprop:Generator_ColumnPropNameInTable="IdSolucionColumn" msprop:Generator_UserColumnName="IdSolucion" type="xs:int" />
+              <xs:element name="FechaTransaccion" msprop:Generator_ColumnVarNameInTable="columnFechaTransaccion" msprop:Generator_ColumnPropNameInRow="FechaTransaccion" msprop:Generator_ColumnPropNameInTable="FechaTransaccionColumn" msprop:Generator_UserColumnName="FechaTransaccion" type="xs:dateTime" />
+              <xs:element name="TipoTransaccion" msprop:Generator_ColumnVarNameInTable="columnTipoTransaccion" msprop:Generator_ColumnPropNameInRow="TipoTransaccion" msprop:Generator_ColumnPropNameInTable="TipoTransaccionColumn" msprop:Generator_UserColumnName="TipoTransaccion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tabla_Bitacora_Inventario_Profesor" msprop:Generator_TableClassName="Tabla_Bitacora_Inventario_ProfesorDataTable" msprop:Generator_TableVarName="tableTabla_Bitacora_Inventario_Profesor" msprop:Generator_TablePropName="Tabla_Bitacora_Inventario_Profesor" msprop:Generator_RowDeletingName="Tabla_Bitacora_Inventario_ProfesorRowDeleting" msprop:Generator_RowChangingName="Tabla_Bitacora_Inventario_ProfesorRowChanging" msprop:Generator_RowEvHandlerName="Tabla_Bitacora_Inventario_ProfesorRowChangeEventHandler" msprop:Generator_RowDeletedName="Tabla_Bitacora_Inventario_ProfesorRowDeleted" msprop:Generator_UserTableName="Tabla_Bitacora_Inventario_Profesor" msprop:Generator_RowChangedName="Tabla_Bitacora_Inventario_ProfesorRowChanged" msprop:Generator_RowEvArgName="Tabla_Bitacora_Inventario_ProfesorRowChangeEvent" msprop:Generator_RowClassName="Tabla_Bitacora_Inventario_ProfesorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdBitacoraInventarioPersonas" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdBitacoraInventarioPersonas" msprop:Generator_ColumnPropNameInRow="IdBitacoraInventarioPersonas" msprop:Generator_ColumnPropNameInTable="IdBitacoraInventarioPersonasColumn" msprop:Generator_UserColumnName="IdBitacoraInventarioPersonas" type="xs:int" />
+              <xs:element name="IdUsuarioLogin" msprop:Generator_ColumnVarNameInTable="columnIdUsuarioLogin" msprop:Generator_ColumnPropNameInRow="IdUsuarioLogin" msprop:Generator_ColumnPropNameInTable="IdUsuarioLoginColumn" msprop:Generator_UserColumnName="IdUsuarioLogin" type="xs:int" />
+              <xs:element name="IdProfesor" msprop:Generator_ColumnVarNameInTable="columnIdProfesor" msprop:Generator_ColumnPropNameInRow="IdProfesor" msprop:Generator_ColumnPropNameInTable="IdProfesorColumn" msprop:Generator_UserColumnName="IdProfesor" type="xs:int" />
+              <xs:element name="FechaTransaccion" msprop:Generator_ColumnVarNameInTable="columnFechaTransaccion" msprop:Generator_ColumnPropNameInRow="FechaTransaccion" msprop:Generator_ColumnPropNameInTable="FechaTransaccionColumn" msprop:Generator_UserColumnName="FechaTransaccion" type="xs:dateTime" />
+              <xs:element name="TipoTransaccion" msprop:Generator_ColumnVarNameInTable="columnTipoTransaccion" msprop:Generator_ColumnPropNameInRow="TipoTransaccion" msprop:Generator_ColumnPropNameInTable="TipoTransaccionColumn" msprop:Generator_UserColumnName="TipoTransaccion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Movimiento_Inventario" />
+      <xs:field xpath="mstns:IdMovimientoInventario" />
+    </xs:unique>
+    <xs:unique name="Tabla_Movimiento_Inventario_Solucion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Movimiento_Inventario_Solucion" />
+      <xs:field xpath="mstns:IdMovimientoInventarioSolucion" />
+    </xs:unique>
+    <xs:unique name="Tabla_Usuario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Usuario" />
+      <xs:field xpath="mstns:IdUsuario" />
+    </xs:unique>
+    <xs:unique name="Tabla_Profesor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Profesor" />
+      <xs:field xpath="mstns:IdProfesor" />
+    </xs:unique>
+    <xs:unique name="Tabla_Reactivo_Inventario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Reactivo_Inventario" />
+      <xs:field xpath="mstns:IdReactivoInventario" />
+    </xs:unique>
+    <xs:unique name="Tabla_Solucion_Reactivo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Solucion_Reactivo" />
+      <xs:field xpath="mstns:IdSolucionReactivo" />
+    </xs:unique>
+    <xs:unique name="Tabla_Catalogo_Unidad_Almacenamiento_Reactivo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Catalogo_Unidad_Almacenamiento_Reactivo" />
+      <xs:field xpath="mstns:IdCatalogoUnidadAlmacenamientoReactivo" />
+    </xs:unique>
+    <xs:unique name="Tabla_Catalogo_Movimiento_Inventario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Catalogo_Movimiento_Inventario" />
+      <xs:field xpath="mstns:IdCatalogoMovimientoInventario" />
+    </xs:unique>
+    <xs:unique name="Tabla_Catalogo_Estado_Fisico_Reactivo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Catalogo_Estado_Fisico_Reactivo" />
+      <xs:field xpath="mstns:IdCatalogoEstadoFisicoReactivo" />
+    </xs:unique>
+    <xs:unique name="Tabla_Catalogo_Estado_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Catalogo_Estado" />
+      <xs:field xpath="mstns:IdCatalogoEstado" />
+    </xs:unique>
+    <xs:unique name="Tabla_Catalogo_Clasificacion_Reactivo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Catalogo_Clasificacion_Reactivo" />
+      <xs:field xpath="mstns:IdCatalogoClasificacionReactivos" />
+    </xs:unique>
+    <xs:unique name="Tabla_Bitacora_Inventario_Reactivos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Bitacora_Inventario_Reactivos" />
+      <xs:field xpath="mstns:IdBitacoraInventarioReactivos" />
+    </xs:unique>
+    <xs:unique name="Tabla_Bitacora_Inventario_Soluciones_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Bitacora_Inventario_Soluciones" />
+      <xs:field xpath="mstns:IdBitacoraInventarioSoluciones" />
+    </xs:unique>
+    <xs:unique name="Tabla_Bitacora_Inventario_Profesor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tabla_Bitacora_Inventario_Profesor" />
+      <xs:field xpath="mstns:IdBitacoraInventarioPersonas" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Tabla_Movimiento_Inventario_Tabla_Usuario1" msdata:parent="Tabla_Usuario" msdata:child="Tabla_Movimiento_Inventario" msdata:parentkey="IdUsuario" msdata:childkey="IdUsuarioMovimiento" msprop:Generator_UserChildTable="Tabla_Movimiento_Inventario" msprop:Generator_ChildPropName="GetTabla_Movimiento_InventarioRows" msprop:Generator_UserRelationName="FK_Tabla_Movimiento_Inventario_Tabla_Usuario1" msprop:Generator_RelationVarName="relationFK_Tabla_Movimiento_Inventario_Tabla_Usuario1" msprop:Generator_UserParentTable="Tabla_Usuario" msprop:Generator_ParentPropName="Tabla_UsuarioRow" />
+      <msdata:Relationship name="FK_Tabla_Movimiento_Inventario_Solucion_Tabla_Usuario1" msdata:parent="Tabla_Usuario" msdata:child="Tabla_Movimiento_Inventario_Solucion" msdata:parentkey="IdUsuario" msdata:childkey="IdUsuarioMovSolucion" msprop:Generator_UserChildTable="Tabla_Movimiento_Inventario_Solucion" msprop:Generator_ChildPropName="GetTabla_Movimiento_Inventario_SolucionRows" msprop:Generator_UserRelationName="FK_Tabla_Movimiento_Inventario_Solucion_Tabla_Usuario1" msprop:Generator_RelationVarName="relationFK_Tabla_Movimiento_Inventario_Solucion_Tabla_Usuario1" msprop:Generator_UserParentTable="Tabla_Usuario" msprop:Generator_ParentPropName="Tabla_UsuarioRow" />
+      <msdata:Relationship name="FK_Tabla_Movimiento_Inventario_Tabla_Profesor1" msdata:parent="Tabla_Profesor" msdata:child="Tabla_Movimiento_Inventario" msdata:parentkey="IdProfesor" msdata:childkey="IdProfesorMovimiento" msprop:Generator_UserChildTable="Tabla_Movimiento_Inventario" msprop:Generator_ChildPropName="GetTabla_Movimiento_InventarioRows" msprop:Generator_UserRelationName="FK_Tabla_Movimiento_Inventario_Tabla_Profesor1" msprop:Generator_RelationVarName="relationFK_Tabla_Movimiento_Inventario_Tabla_Profesor1" msprop:Generator_UserParentTable="Tabla_Profesor" msprop:Generator_ParentPropName="Tabla_ProfesorRow" />
+      <msdata:Relationship name="FK_Tabla_Movimiento_Inventario_Solucion_Tabla_Profesor1" msdata:parent="Tabla_Profesor" msdata:child="Tabla_Movimiento_Inventario_Solucion" msdata:parentkey="IdProfesor" msdata:childkey="IdProfesorMovSolucion" msprop:Generator_UserChildTable="Tabla_Movimiento_Inventario_Solucion" msprop:Generator_ChildPropName="GetTabla_Movimiento_Inventario_SolucionRows" msprop:Generator_UserRelationName="FK_Tabla_Movimiento_Inventario_Solucion_Tabla_Profesor1" msprop:Generator_RelationVarName="relationFK_Tabla_Movimiento_Inventario_Solucion_Tabla_Profesor1" msprop:Generator_UserParentTable="Tabla_Profesor" msprop:Generator_ParentPropName="Tabla_ProfesorRow" />
+      <msdata:Relationship name="FK_Tabla_Profesor_Tabla_Usuario" msdata:parent="Tabla_Usuario" msdata:child="Tabla_Profesor" msdata:parentkey="IdUsuario" msdata:childkey="IdUsuario" msprop:Generator_UserChildTable="Tabla_Profesor" msprop:Generator_ChildPropName="GetTabla_ProfesorRows" msprop:Generator_UserRelationName="FK_Tabla_Profesor_Tabla_Usuario" msprop:Generator_ParentPropName="Tabla_UsuarioRow" msprop:Generator_RelationVarName="relationFK_Tabla_Profesor_Tabla_Usuario" msprop:Generator_UserParentTable="Tabla_Usuario" />
+      <msdata:Relationship name="FK_Tabla_Movimiento_Inventario_Tabla_Reactivo_Inventario1" msdata:parent="Tabla_Reactivo_Inventario" msdata:child="Tabla_Movimiento_Inventario" msdata:parentkey="IdReactivoInventario" msdata:childkey="IdReactivoMovimiento" msprop:Generator_UserChildTable="Tabla_Movimiento_Inventario" msprop:Generator_ChildPropName="GetTabla_Movimiento_InventarioRows" msprop:Generator_UserRelationName="FK_Tabla_Movimiento_Inventario_Tabla_Reactivo_Inventario1" msprop:Generator_RelationVarName="relationFK_Tabla_Movimiento_Inventario_Tabla_Reactivo_Inventario1" msprop:Generator_UserParentTable="Tabla_Reactivo_Inventario" msprop:Generator_ParentPropName="Tabla_Reactivo_InventarioRow" />
+      <msdata:Relationship name="FK_Tabla_Reactivo_Inventario_Tabla_Usuario" msdata:parent="Tabla_Usuario" msdata:child="Tabla_Reactivo_Inventario" msdata:parentkey="IdUsuario" msdata:childkey="IdUsuario" msprop:Generator_UserChildTable="Tabla_Reactivo_Inventario" msprop:Generator_ChildPropName="GetTabla_Reactivo_InventarioRows" msprop:Generator_UserRelationName="FK_Tabla_Reactivo_Inventario_Tabla_Usuario" msprop:Generator_ParentPropName="Tabla_UsuarioRow" msprop:Generator_RelationVarName="relationFK_Tabla_Reactivo_Inventario_Tabla_Usuario" msprop:Generator_UserParentTable="Tabla_Usuario" />
+      <msdata:Relationship name="FK_Tabla_Movimiento_Inventario_Solucion_Tabla_Solucion_Reactivo1" msdata:parent="Tabla_Solucion_Reactivo" msdata:child="Tabla_Movimiento_Inventario_Solucion" msdata:parentkey="IdSolucionReactivo" msdata:childkey="IdSolucionReactivoMovSolucion" msprop:Generator_UserChildTable="Tabla_Movimiento_Inventario_Solucion" msprop:Generator_ChildPropName="GetTabla_Movimiento_Inventario_SolucionRows" msprop:Generator_UserRelationName="FK_Tabla_Movimiento_Inventario_Solucion_Tabla_Solucion_Reactivo1" msprop:Generator_RelationVarName="relationFK_Tabla_Movimiento_Inventario_Solucion_Tabla_Solucion_Reactivo1" msprop:Generator_UserParentTable="Tabla_Solucion_Reactivo" msprop:Generator_ParentPropName="Tabla_Solucion_ReactivoRow" />
+      <msdata:Relationship name="FK_Tabla_Movimiento_Inventario_Tabla_Catalogo_Movimiento_Inventario1" msdata:parent="Tabla_Catalogo_Movimiento_Inventario" msdata:child="Tabla_Movimiento_Inventario" msdata:parentkey="IdCatalogoMovimientoInventario" msdata:childkey="IdCatMovimientoInventario" msprop:Generator_UserChildTable="Tabla_Movimiento_Inventario" msprop:Generator_ChildPropName="GetTabla_Movimiento_InventarioRows" msprop:Generator_UserRelationName="FK_Tabla_Movimiento_Inventario_Tabla_Catalogo_Movimiento_Inventario1" msprop:Generator_RelationVarName="relationFK_Tabla_Movimiento_Inventario_Tabla_Catalogo_Movimiento_Inventario1" msprop:Generator_UserParentTable="Tabla_Catalogo_Movimiento_Inventario" msprop:Generator_ParentPropName="Tabla_Catalogo_Movimiento_InventarioRow" />
+      <msdata:Relationship name="FK_Tabla_Movimiento_Inventario_Solucion_Tabla_Catalogo_Movimiento_Inventario1" msdata:parent="Tabla_Catalogo_Movimiento_Inventario" msdata:child="Tabla_Movimiento_Inventario_Solucion" msdata:parentkey="IdCatalogoMovimientoInventario" msdata:childkey="IdCatMovimiento" msprop:Generator_UserChildTable="Tabla_Movimiento_Inventario_Solucion" msprop:Generator_ChildPropName="GetTabla_Movimiento_Inventario_SolucionRows" msprop:Generator_UserRelationName="FK_Tabla_Movimiento_Inventario_Solucion_Tabla_Catalogo_Movimiento_Inventario1" msprop:Generator_RelationVarName="relationFK_Tabla_Movimiento_Inventario_Solucion_Tabla_Catalogo_Movimiento_Inventario1" msprop:Generator_UserParentTable="Tabla_Catalogo_Movimiento_Inventario" msprop:Generator_ParentPropName="Tabla_Catalogo_Movimiento_InventarioRow" />
+      <msdata:Relationship name="FK_Tabla_Usuario_Tabla_Catalogo_Estado" msdata:parent="Tabla_Catalogo_Estado" msdata:child="Tabla_Usuario" msdata:parentkey="IdCatalogoEstado" msdata:childkey="IdCatalogoEstado" msprop:Generator_UserChildTable="Tabla_Usuario" msprop:Generator_ChildPropName="GetTabla_UsuarioRows" msprop:Generator_UserRelationName="FK_Tabla_Usuario_Tabla_Catalogo_Estado" msprop:Generator_RelationVarName="relationFK_Tabla_Usuario_Tabla_Catalogo_Estado" msprop:Generator_UserParentTable="Tabla_Catalogo_Estado" msprop:Generator_ParentPropName="Tabla_Catalogo_EstadoRow" />
+      <msdata:Relationship name="FK_Tabla_Profesor_Tabla_Catalogo_Estado1" msdata:parent="Tabla_Catalogo_Estado" msdata:child="Tabla_Profesor" msdata:parentkey="IdCatalogoEstado" msdata:childkey="IdCatalogoEstado" msprop:Generator_UserChildTable="Tabla_Profesor" msprop:Generator_ChildPropName="GetTabla_ProfesorRows" msprop:Generator_UserRelationName="FK_Tabla_Profesor_Tabla_Catalogo_Estado1" msprop:Generator_RelationVarName="relationFK_Tabla_Profesor_Tabla_Catalogo_Estado1" msprop:Generator_UserParentTable="Tabla_Catalogo_Estado" msprop:Generator_ParentPropName="Tabla_Catalogo_EstadoRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

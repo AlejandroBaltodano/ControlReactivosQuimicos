@@ -1,0 +1,4 @@
+C:\Users\Creyes\Documents\Visual Studio 2015\Projects\ProyectoControlReactivos(2)\ControlReactivos.Model\bin\Debug\ControlReactivos.Model.dll
+C:\Users\Creyes\Documents\Visual Studio 2015\Projects\ProyectoControlReactivos(2)\ControlReactivos.Model\bin\Debug\ControlReactivos.Model.pdb
+C:\Users\Creyes\Documents\Visual Studio 2015\Projects\ProyectoControlReactivos(2)\ControlReactivos.Model\obj\Debug\ControlReactivos.Model.dll
+C:\Users\Creyes\Documents\Visual Studio 2015\Projects\ProyectoControlReactivos(2)\ControlReactivos.Model\obj\Debug\ControlReactivos.Model.pdb

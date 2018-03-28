@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ControlReactivos.AccesoADatos
+{
+    public class RestauracionConexion
+    {
+        SqlConnection connection;
+
+        public RestauracionConexion()
+        {
+
+            connection = new SqlConnection("Data Source=.;Initial Catalog=master;User ID=sa;Password=123");
+        }
+
+        public SqlConnection Conectar()
+        {
+            try
+            {
+                Desconectar();
+            }
+            catch { }
+
+            connection.Open();
+
+            return connection;
+        }
+
+        public void Desconectar()
+        {
+            connection.Close();
+        }
+
+        public void Update(String query)
+        {
+            Conectar();
+
+            SqlCommand comando = new SqlCommand(query, connection);
+
+            comando.ExecuteNonQuery();
+
+            Desconectar();
+        }
+    }
+}

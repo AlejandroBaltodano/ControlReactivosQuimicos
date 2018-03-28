@@ -1,0 +1,221 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ProyectoControlReactivos
+{
+    public partial class frmPrincipal : Form
+    {
+        ControlReactivos.Model.Usuario usuarioLogin;
+        public frmPrincipal(ControlReactivos.Model.Usuario nombreUsuario)
+        {
+            usuarioLogin = nombreUsuario;
+            InitializeComponent();
+
+        }
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea salir de la Aplicación?", "Informacion Requerida",
+        MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void ingresarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddUsuario(usuarioLogin).ShowDialog();
+        }
+
+        private void ingresarProfesorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddProfesor(usuarioLogin).ShowDialog();
+        }
+
+        private void catalogoProfesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddCatalogoProfesion().ShowDialog();
+        }
+
+        private void catalogoUnidadAlmacenamientoReactivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddCatalogoUnidadAlmacenamiento().ShowDialog();
+        }
+
+        private void catalogoEstadoFisicoReactivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddCatalogoEstadoFisico().ShowDialog();
+        }
+
+        private void catalogoClasificacionReactivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddCatalogoClasificacionReactivo().ShowDialog();
+        }
+
+        private void ingresarSolucionReactivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddSolucionReactivo(usuarioLogin).ShowDialog();
+        }
+
+        private void ingresarReactivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAddInventarioReactivo(usuarioLogin).ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+            lblUsuario.Text = usuarioLogin.NombreUsuarioSql;
+            lblFecha.Text = "" + DateTime.Now;
+
+        }
+
+        private void reactivoInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmMovimientoInventario(usuarioLogin).ShowDialog();
+        }
+
+        private void soluciónInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmMovimientoInventarioSolucion(usuarioLogin).ShowDialog();
+        }
+
+        private void reactivosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new ReporteReactivos().ShowDialog();
+        }
+
+        private void solucionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReporteSolucion().ShowDialog();
+        }
+
+        private void reactivosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new frmReporteMovimientoInventarioReactivo().ShowDialog();
+        }
+
+        private void solucionesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new frmReporteMovimientoSolucionReactivo().ShowDialog();
+        }
+
+        private void realizarBackUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmBackupReactivosQuimicos().ShowDialog();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            if (MessageBox.Show("Desea salir de la Aplicación?", "Informacion Requerida",
+        MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
+        }
+
+        private void hacerRespaldoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ControlReactivos.AccesoADatos.Conexion conexion = new ControlReactivos.AccesoADatos.Conexion();
+                string query = "";
+
+                string path = "";
+                string directorioCompleto = "";
+
+                SaveFileDialog saveRespaldo = new SaveFileDialog();
+                DateTime dt = DateTime.Now;
+                saveRespaldo.FileName = "Respaldo Reactivos Químicos " + dt.Day.ToString() + "-" + dt.Month.ToString() + "-" + dt.Year.ToString() + ".bak";
+
+                saveRespaldo.Filter = "Bases de datos (*.bak)|*.bak";
+
+                if (saveRespaldo.ShowDialog() == DialogResult.OK)
+                {
+                    path = Path.GetDirectoryName(saveRespaldo.FileName);
+                    directorioCompleto = saveRespaldo.FileName;
+                    MessageBox.Show(directorioCompleto);
+       query = "Use [Inventario_Reactivos _Quimicos] BACKUP DATABASE [Inventario_Reactivos _Quimicos] TO DISK = '"+directorioCompleto+"' WITH FORMAT, MEDIANAME = 'Respaldo Reactivo Quimicos', NAME = 'Respaldo Reactivo Quimico' ";
+                    conexion.Update(query);
+
+
+                    MessageBox.Show("Transaccion Realizada con Exito", "Informacion del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Problemas al Realizar la Transaccion", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
+
+        private void manualDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void recuperarRespaldoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ControlReactivos.AccesoADatos.Conexion conexion = new ControlReactivos.AccesoADatos.Conexion();
+                string query = "";
+
+                string path = "";
+                string directorioCompleto = "";
+                OpenFileDialog abrirRespaldo = new OpenFileDialog();
+                abrirRespaldo.Filter = "Respaldos (*.bak)|*.bak";
+                if (abrirRespaldo.ShowDialog() == DialogResult.OK)
+                {
+
+                    path = Path.GetDirectoryName(abrirRespaldo.FileName);
+                    directorioCompleto = abrirRespaldo.FileName ;
+ query = "USE [master] RESTORE DATABASE [Inventario_Reactivos _Quimicos] FROM DISK = '" + directorioCompleto + "'  WITH REPLACE ";
+                    conexion.Update(query);
+
+                    MessageBox.Show("Transaccion Realizada con Exito", "Informacion del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Problemas al Realizar la Transaccion", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
+
+
+
+        public void VerificarUsuarioAdministrador() {
+
+            if (usuarioLogin.Cedula.Equals("1"))
+            {
+                usuariosToolStripMenuItem.Enabled = true;
+                recuperarRespaldoToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                usuariosToolStripMenuItem.Enabled = false;
+                recuperarRespaldoToolStripMenuItem.Enabled = false;
+            }
+
+
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            VerificarUsuarioAdministrador();
+        }
+    }
+}

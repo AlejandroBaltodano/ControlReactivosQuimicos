@@ -1,0 +1,181 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.SqlServer;
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Common;
+using System.Data.SqlClient;
+
+namespace ProyectoControlReactivos
+{
+    public partial class frmBackupReactivosQuimicos : Form
+    {
+        public static Server srvSql;
+
+        public frmBackupReactivosQuimicos()
+        {
+            InitializeComponent();
+        }
+
+        private void frmBackupReactivosQuimicos_Load(object sender, EventArgs e)
+        {
+            // Create a DataTable where we enumerate the available servers
+            DataTable dtServers = SmoApplication.EnumAvailableSqlServers(true);
+            // If there are any servers at all
+            if (dtServers.Rows.Count > 0)
+            {
+                // Loop through each server in the DataTable
+                foreach (DataRow drServer in dtServers.Rows)
+                {
+                    // Add the name to the combobox
+                    cmbServidorBaseDatos.Items.Add(drServer["Name"]);
+
+                }
+            }
+        }
+
+        private void btnConectar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // If a server was selected at all from the combobox
+                if (cmbServidorBaseDatos.SelectedItem != null && cmbServidorBaseDatos.SelectedItem.ToString() != "")
+                {
+                    // Create a new connection to the selected server name
+                    ServerConnection srvConn = new ServerConnection(cmbServidorBaseDatos.SelectedItem.ToString());
+                    // Log in using SQL authentication instead of Windows authentication
+                    srvConn.LoginSecure = false;
+                    // Give the login username
+                    srvConn.Login = txtUsuario.Text;
+                    // Give the login password
+                    srvConn.Password = txtContraseña.Text;
+                    // Create a new SQL Server object using the connection we created
+                    srvSql = new Server(srvConn);
+                    // Loop through the databases list
+                    foreach (Database dbServer in srvSql.Databases)
+                    {
+                        // Add database to combobox
+                        cmbBdARespaldar.Items.Add(dbServer.Name);
+                    }
+MessageBox.Show("Conexion Realizada con exito", "Informacion del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // A server was not selected, show an error message
+                    MessageBox.Show("Debe de seleccionar el Servidor de Base de Datos Primero", "Servidor de Base de Datos No Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception)
+            {
+ MessageBox.Show("Problemas al realizar la transaccion", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              
+            }
+           
+        }
+
+        private void btnRespaldar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (saveFileDialogBackup.ShowDialog() == DialogResult.OK)
+                {
+                    string sBackup = "BACKUP DATABASE " + this.cmbBdARespaldar.SelectedItem.ToString() +
+                 " TO DISK = N'" + this.saveFileDialogBackup.FileName +
+                 "' WITH NOFORMAT, NOINIT, NAME =N'" + this.cmbBdARespaldar.SelectedItem.ToString() +
+                 "' -Full Database Backup',SKIP, STATS = 10";
+                    SqlConnectionStringBuilder csb = new SqlConnectionStringBuilder();
+
+                    csb.DataSource = this.cmbServidorBaseDatos.SelectedItem.ToString();
+                    csb.InitialCatalog = this.cmbBdARespaldar.SelectedItem.ToString();
+                    csb.IntegratedSecurity = true;
+                    ControlReactivos.AccesoADatos.Conexion conexion = new ControlReactivos.AccesoADatos.Conexion();
+
+                    //string Query = "Exec BackupBaseDatos ";
+                    conexion.Update(sBackup);
+ MessageBox.Show("Transaccion Realizada exitosamente", "Infromacion del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //BackupDatabase(txtUsuario.Text, txtContraseña.Text, cmbServidorBaseDatos.SelectedItem.ToString(), cmbBdARespaldar.SelectedItem.ToString(), saveFileDialogBackup.FileName);
+                    //// Create a new backup operation
+                    //Backup bkpDatabase = new Backup();
+                    //// Set the backup type to a database backup
+                    //bkpDatabase.Action = BackupActionType.Database;
+                    //// Set the database that we want to perform a backup on
+                    //bkpDatabase.Database = cmbBdARespaldar.SelectedItem.ToString();
+
+                    //// Set the backup device to a file
+                    //BackupDeviceItem bkpDevice = new BackupDeviceItem(saveFileDialogBackup.FileName, DeviceType.File);
+                    //// Add the backup device to the backup
+                    //bkpDatabase.Devices.Add(bkpDevice);
+                    //// Perform the backup
+                    //bkpDatabase.SqlBackup(srvSql);
+                    //MessageBox.Show("Transaccion realizada exitosamente", "Informacion del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //}
+                }
+                else
+                {
+                    // There was no connection established; probably the Connect button was not clicked
+                    MessageBox.Show("La Conexion al Servidor de Base de Datos no se ha establecido", "No se ha conectado al servidor", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception)
+            {
+
+           MessageBox.Show("Problemas al realizar la transaccion", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //try
+            //{
+            //    // If there was a SQL connection created
+            //    if (srvSql != null)
+            //    {
+            //        // If the user has chosen a path where to save the backup file
+            //if (saveFileDialogBackup.ShowDialog() == DialogResult.OK)
+            //{
+
+
+                //BackupDatabase(txtUsuario.Text, txtContraseña.Text, cmbServidorBaseDatos.SelectedItem.ToString(), cmbBdARespaldar.SelectedItem.ToString(), saveFileDialogBackup.FileName);
+                //// Create a new backup operation
+                //Backup bkpDatabase = new Backup();
+                //// Set the backup type to a database backup
+                //bkpDatabase.Action = BackupActionType.Database;
+                //// Set the database that we want to perform a backup on
+                //bkpDatabase.Database = cmbBdARespaldar.SelectedItem.ToString();
+
+                //// Set the backup device to a file
+                //BackupDeviceItem bkpDevice = new BackupDeviceItem(saveFileDialogBackup.FileName, DeviceType.File);
+                //// Add the backup device to the backup
+                //bkpDatabase.Devices.Add(bkpDevice);
+                //// Perform the backup
+                //bkpDatabase.SqlBackup(srvSql);
+                //MessageBox.Show("Transaccion realizada exitosamente", "Informacion del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+            }
+                //else
+                //{
+                //    // There was no connection established; probably the Connect button was not clicked
+                //    MessageBox.Show("La Conexion al Servidor de Base de Datos no se ha establecido", "No se ha conectado al servidor", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //}
+    //}
+    //catch (Exception)
+    //{
+
+    //   MessageBox.Show("Problemas al realizar la transaccion", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//   }
+
+//}
+
+
+
+
+       
+
+
+    }
+}
+        
+    
